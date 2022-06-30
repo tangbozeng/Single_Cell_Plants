@@ -1,0 +1,197 @@
+---
+title: "07_2_wt_DEGs_ch_pc"
+author: "Bozeng_Tang"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r }
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+library(tidyverse)
+library(monocle)
+
+my_cds<-readRDS(file='processed/NEW_bt1_to_6/07.1_create_values/my_cds')
+```
+
+# first calculate trajectory for WT only
+```{r}
+pData(my_cds)$wt<- pData(my_cds)$group == "wt" # create the column for wt
+
+expressed_genes <- row.names( subset( fData (my_cds), 
+                                      num_cells_expressed >= 10)) # define the number of expressed genes
+                              
+cds_wt_all<- my_cds[ expressed_genes, pData( my_cds )$wt] # create a new monocle target only with WT
+
+# filter the genes with min expression
+#filter the genes 
+cds_wt_all <- detectGenes( cds_wt_all, min_expr = 0.1)
+
+
+# HERE IS IMPORTANT! define the DEGs for later sodutime calcualtion
+DEGs_wt_all <- differentialGeneTest(cds_wt_all, 
+                                    fullModelFormulaStr = '~seurat_clusters', 
+                                    reducedModelFormulaStr = "~replicates",
+                                    cores = 8)
+
+# select the top 2000 genes, we can make it a bit larger, therefore we can elimiate more effects derived from wild type developmental stage
+top2000_wt_all <- row.names(DEGs_wt_all
+                            )[order(DEGs_wt_all$qval)][1:3000]
+
+top_wt_all<-as.data.frame(top2000_wt_all)
+```
+
+# now, we biuld trajectory for wt only
+
+```{r, warning=FALSE}
+cds_wt_all <- setOrderingFilter(cds_wt_all, 
+                                ordering_genes = top2000_wt_all) # set the order using top 2000
+
+cds_wt_all <- reduceDimension(cds_wt_all, 
+                              method = 'DDRTree') # demension reduction
+
+cds_wt_all <- orderCells(cds_wt_all) # we can add root_state, and we can add num_paths to define the progress
+
+plot_cell_trajectory(cds_wt_all, 
+                     color_by="cell_type",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_wrap(~State)
+
+```
+
+# now, I want to build trajectory for CH only
+```{r}
+pData(my_cds)$ch<- pData(my_cds)$group == "ch" # create the column for wt
+
+expressed_genes <- row.names( subset( fData (my_cds), 
+                                      num_cells_expressed >= 10)) # define the number of expressed genes
+                              
+cds_ch_all<- my_cds[ expressed_genes, pData( my_cds )$ch] # create a new monocle target only with WT
+
+# filter the genes with min expression
+#filter the genes 
+cds_ch_all <- detectGenes( cds_ch_all, min_expr = 0.1)
+
+
+# HERE IS IMPORTANT! define the DEGs for later sodutime calcualtion
+DEGs_ch_all <- differentialGeneTest(cds_ch_all, 
+                                    fullModelFormulaStr = '~seurat_clusters', 
+                                    reducedModelFormulaStr = "~replicates",
+                                    cores = 8) # we can manually remove the DEGs, and I think taht would make a better sense, as the orig.ident+clusters would reduce the cluster 1, 6, 8 insight during this procedure
+
+# select the top 2000 genes, we can make it a bit larger, therefore we can elimiate more effects derived from wild type developmental stage
+top2000_ch_all <- row.names(DEGs_ch_all
+                            )[order(DEGs_ch_all$qval)][1:3000]
+
+
+# transform topDEGs_ch into dataframe
+top_ch_all<-as.data.frame(top2000_ch_all) 
+
+# filterout the DEGs detected in WT, but these genes are purely associated with infection progress, absoultely 
+top_ch_degs<-top_ch_all%>%
+  filter(!(top2000_ch_all%in%top_wt_all$top2000_wt_all)) # after this step, we removed 1300~ genes
+
+# transform the new list, back to list of characters
+ch_degs_list<-as.character(top_ch_degs$top2000_ch_all)
+
+cds_ch_all <- setOrderingFilter(cds_ch_all, 
+                                ordering_genes = ch_degs_list) # set the order using top 2000
+
+cds_ch_all <- reduceDimension(cds_ch_all, 
+                              method = 'DDRTree') # demension reduction
+
+cds_ch_all <- orderCells(cds_ch_all) # we can add root_state, and we can add num_paths to define the progress
+
+plot_cell_trajectory(cds_ch_all, 
+                     color_by="pathogen_Cells",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_wrap(~State)
+
+plot_cell_trajectory(cds_ch_all, 
+                     color_by="pathogen_Cells",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_grid(pathogen_Cells~State)
+
+# could I set root_state, and order the cells?
+cds_ch_all_root <- orderCells(cds_ch_all,  root_state = 4)
+
+plot_cell_trajectory(cds_ch_all_root, 
+                     color_by="pathogen_Cells",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_grid(pathogen_Cells~State)
+```
+
+# now, let us perform the analysis for PC
+```{r}
+pData(my_cds)$pc<- pData(my_cds)$group == "pc" # create the column for wt
+
+expressed_genes <- row.names( subset( fData (my_cds), 
+                                      num_cells_expressed >= 10)) # define the number of expressed genes
+                              
+cds_pc_all<- my_cds[ expressed_genes, pData( my_cds )$pc] # create a new monocle target only with WT
+
+# filter the genes with min expression
+#filter the genes 
+cds_pc_all <- detectGenes( cds_pc_all, min_expr = 0.1)
+
+
+# HERE IS IMPORTANT! define the DEGs for later sodutime calcualtion
+DEGs_pc_all <- differentialGeneTest(cds_pc_all, 
+                                    fullModelFormulaStr = '~seurat_clusters', 
+                                    reducedModelFormulaStr = "~replicates",
+                                    cores = 8) # we can manually remove the DEGs, and I think taht would make a better sense, as the orig.ident+clusters would reduce the cluster 1, 6, 8 insight during this procedure
+
+# select the top 2000 genes, we can make it a bit larger, therefore we can elimiate more effects derived from wild type developmental stage
+top2000_pc_all <- row.names(DEGs_pc_all
+                            )[order(DEGs_pc_all$qval)][1:3000]
+
+
+# transform topDEGs_ch into dataframe
+top_pc_all<-as.data.frame(top2000_pc_all) 
+
+# filterout the DEGs detected in WT, but these genes are purely associated with infection progress, absoultely 
+top_pc_degs<-top_pc_all%>%
+  filter(!(top2000_pc_all%in%top_wt_all$top2000_wt_all)) # after this step, we removed 1300~ genes
+
+# transform the new list, back to list of characters
+pc_degs_list<-as.character(top_pc_degs$top2000_pc_all)
+
+cds_pc_all <- setOrderingFilter(cds_pc_all, 
+                                ordering_genes = pc_degs_list) # set the order using top 2000
+
+cds_pc_all <- reduceDimension(cds_pc_all, 
+                              method = 'DDRTree') # demension reduction
+
+cds_pc_all <- orderCells(cds_pc_all) # we can add root_state, and we can add num_paths to define the progress
+
+plot_cell_trajectory(cds_pc_all, 
+                     color_by="pathogen_Cells",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_wrap(~State)
+
+plot_cell_trajectory(cds_pc_all, 
+                     color_by="pathogen_Cells",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_grid(pathogen_Cells~State)
+
+# could I set root_state, and order the cells?
+#cds_pc_all_root <- orderCells(cds_pc_all,  root_state = 4)
+
+plot_cell_trajectory(cds_pc_all, 
+                     color_by="pathogen_Cells",
+                     cell_size = 0.2,
+                     cell_name_size = 0.1)+facet_grid(pathogen_Cells~State)
+
+save.image("~/Desktop/Single_Cell/processed/NEW_bt1_to_6/07_2_result_of_wt_DEGs_CH_PC/trjactory_wt_degs_ch_pc")
+```
+
+# DEGs overlapped by CH and PC are 600+

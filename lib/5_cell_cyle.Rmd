@@ -1,0 +1,57 @@
+---
+title: "5._cell_cycle_removal"
+author: "Bozeng_Tang"
+date: "28/03/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r }
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+library(Seurat)
+library(SeuratData)
+library(patchwork)
+library(dplyr)
+library(ggplot2)
+all_seurat <- readRDS(file='processed/all_seurat')
+library("glmGamPoi")
+# the direct way is:Normalzation-FVF-Scaledata-RunPCA-FindNeighbors-FindClusters-RunUMAP
+# SCTransform: SCTransform-RunPCA-FindNeighbors-FindClusters-RunUMAP
+# with cell cycle:Normal-FVF-RunPCA-CellCycleScoring-RunPCA
+# we can also test the effects caused by protoplasting and investigate its impact onto clustering
+```
+
+# perform the right normalization and see the pattern
+# add cell cycle effects
+```{r}
+cell_cyl<-read.csv("raw_data/QC_genes/cell_cycle_genes.csv")
+
+s.genes <- cell_cyl%>%
+  filter(Phase=="G1-S")
+g2m.genes<- cell_cyl%>%
+  filter(Phase=="G2-M")
+
+all_seurat <- CellCycleScoring(all_seurat, s.features = s.genes$Gene, g2m.features = g2m.genes$Gene, set.ident = TRUE)
+
+all_seurat <- SCTransform(all_seurat)
+all_seurat <- RunPCA(all_seurat, verbose = FALSE)
+all_seurat <- RunUMAP(all_seurat, dims = 1:30, verbose = FALSE, reduction = "harmony")
+all_seurat <- FindNeighbors(all_seurat, dims = 1:30, verbose = FALSE)
+all_seurat <- FindClusters(all_seurat, verbose = FALSE, resolution = 0.5)
+DimPlot(all_seurat, label = TRUE,reduction = "umap", split.by = "orig.ident") + NoLegend()
+```
+
+# we need to assess the impact of protoplast into the reads
+```{r}
+
+```
+

@@ -1,0 +1,426 @@
+---
+title: "06_1_calculate_values_metafeatures"
+author: "Bozeng_Tang"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r }
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+library(tidyverse)
+
+# reading the object from previous section
+load("~/Desktop/Single_Cell/processed/NEW_bt1_to_6/06.1_manipulate_genes_metafeatures/saved_features.RData")
+# before that I need to seperate the inter_list,
+# it has to be manual, but we have see a lot of things.
+
+DefaultAssay(SCT_result)<-"SCT"
+
+calium_list<-inter_list%>%
+  filter(Source=="calcium")
+
+NLR_list<-inter_list%>%
+  filter(Source=="NLR")
+
+RLK_list<-inter_list%>%
+  filter(Source=="RLK")
+
+RLP_list<-inter_list%>%
+  filter(Source=="RLP")
+
+DAMPs_list<-inter_list%>%
+  filter(Source=="MAMPs")
+
+SA_list<-inter_list%>%
+  filter(Source=="Salicylic Acid")
+
+WRKY_list<-inter_list%>%
+  filter(Source=="WYKY")
+
+ROS_list<-inter_list%>%
+  filter(Source=="ROS")
+
+defense_list<-inter_list%>%
+  filter(Source=="defense")
+
+JA_list<-inter_list%>%
+  filter(Source=="JA")
+
+MAPK_list<-inter_list%>%
+  filter(Source=="MAPk")
+
+small_list<-inter_list%>%
+  filter(Source=="small_RNA")
+
+PAMPs_list<-inter_list%>%
+  filter(Source=="PAMPs")
+
+```
+
+# I want to apply the same rational for the cell type markers, and then we can calculate the full metafeatures
+```{r}
+cell_types<-read.csv("raw_data/final_marker.csv")
+
+indata_cell_markers<-cell_types%>%
+  filter(gene%in%rownames(SCT_result))
+
+M_marker_list<-indata_cell_markers%>%
+  filter(Cell_type=="leaf mesophyll" | Cell_type=="leaf")
+
+
+E_marker_list<-indata_cell_markers%>%
+  filter(Cell_type=="leaf epidermis" | Cell_type=="leaf pavement cell")
+
+G_marker_list<-indata_cell_markers%>%
+  filter(Cell_type=="leaf guard cell" | Cell_type=="leaf stomatal complex"| Cell_type=="leaf stomatal pore")
+ 
+V_marker_list<-indata_cell_markers%>%
+  filter(Cell_type=="vascular leaf" )
+
+P_marker_list<-indata_cell_markers%>%
+  filter(Cell_type=="vascular leaf"| Cell_type=="phloem" )
+
+B_marker_list<-indata_cell_markers%>%
+  filter(Cell_type=="vascular leaf" | Cell_type=="bundle sheath" )
+ 
+
+```
+
+## now, let us calcualte metafeature for each cell, as it would be interesting
+
+```{r}
+
+# 
+
+SCT_result <- MetaFeature( object = SCT_result, features = calium_list$gene_name,
+                           meta.name = 'calium_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = NLR_list$gene_name,
+                           meta.name = 'NLR_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = RLK_list$gene_name,
+                           meta.name = 'RLK_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = RLP_list$gene_name,
+                           meta.name = 'RLP_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = DAMPs_list$gene_name,
+                           meta.name = 'DAMPs_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = SA_list$gene_name,
+                           meta.name = 'SA_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = WRKY_list$gene_name,
+                           meta.name = 'WRKY_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = PAMPs_list$gene_name,
+                           meta.name = 'PAMPs_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = ROS_list$gene_name,
+                           meta.name = 'ROS_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = defense_list$gene_name,
+                           meta.name = 'defense_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = JA_list$gene_name,
+                           meta.name = 'JA_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = MAPK_list$gene_name,
+                           meta.name = 'MAPK_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = known_list$gene_name,
+                           meta.name = 'known_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = laser_list$gene_name,
+                           meta.name = 'laser_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = AP_list$gene_name,
+                           meta.name = 'AP_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = BIO_list$gene_name,
+                           meta.name = 'BIO_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = PC_list$gene_name,
+                           meta.name = 'pc_meta')
+
+# now, lets add the marker genes
+SCT_result <- MetaFeature( object = SCT_result, features = M_marker_list$gene,
+                           meta.name = 'mesophyll_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = E_marker_list$gene,
+                           meta.name = 'Epidermis_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = G_marker_list$gene,
+                           meta.name = 'Guard_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = V_marker_list$gene,
+                           meta.name = 'vasculature_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = P_marker_list$gene,
+                           meta.name = 'Plohem_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = B_marker_list$gene,
+                           meta.name = 'bundle_meta')
+
+```
+
+## AddmoduleScore
+```{r}
+## need to transform the dataframe column, into list
+calium_score_list<-list(c(calium_list$gene_name))
+NLR_score_list<-list(c(NLR_list$gene_name))
+RLK_score_list<-list(c(RLK_list$gene_name))
+RLP_score_list<-list(c(RLP_list$gene_name))
+DAMPs_score_list<-list(c(DAMPs_list$gene_name))
+SA_score_list<-list(c(SA_list$gene_name))
+WRKY_score_list<-list(c(WRKY_list$gene_name))
+ROS_score_list<-list(c(ROS_list$gene_name))
+defense_score_list<-list(c(defense_list$gene_name))
+JA_score_list<-list(c(JA_list$gene_name))
+MAPK_score_list<-list(c(MAPK_list$gene_name))
+PAMPs_score_list<-list(c(PAMPs_list$gene_name))
+known_score_list<-list(c(known_list$gene_name))
+laser_score_list<-list(c(laser_list$gene_name))
+AP_score_list<-list(c(AP_list$gene_name))
+Bio_score_list<-list(c(BIO_list$gene_name))
+PC_score_list<-list(c(PC_list$gene_name))
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = calium_score_list, name = 'calium_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = NLR_score_list, name = 'NLR_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = RLK_score_list, name = 'RLK_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = RLP_score_list, name = 'RLP_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = DAMPs_score_list, name = 'DAMPs_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = SA_score_list, name = 'SA_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = WRKY_score_list, name = 'WRKY_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = ROS_score_list, name = 'ROS_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = defense_score_list, name = 'defense_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = JA_score_list, name = 'JA_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = MAPK_score_list, name = 'MAPK_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = PAMPs_score_list, name = 'PAMPs_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = known_score_list, name = 'known_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = laser_score_list, name = 'laser_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = AP_score_list, name = 'AP_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = Bio_score_list, name = 'Bio_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = PC_score_list, name = 'PC_score')
+```
+
+# add HR, PTI, 
+```{r}
+PTI_core<-read.csv("raw_data/defense_genes/PTI/core_PTI_40.csv")
+PTI_up<-read.csv("raw_data/defense_genes/PTI/PTI_700up.csv")
+PTI_down<-read.csv("raw_data/defense_genes/PTI/PTI_down_100.csv")
+
+HR_in<-read.csv("raw_data/defense_genes/HR_markers/HR_in_specific.csv")
+HR_out<-read.csv("raw_data/defense_genes/HR_markers/out_HR_specific.csv")
+HR_inandout<-read.csv("raw_data/defense_genes/HR_markers/In_and_Out_HR.csv")
+
+# list for core
+PTI_core_list<-inner_join(PTI_core, feature_list, by=c("core_PTI_40" ="locus"))%>%
+  filter(gene_name%in%rownames(SCT_result))
+# list fore core score
+PTI_core_score_list<-list(c(PTI_core_list$gene_name))
+
+# list up PTI
+PTI_up_list<-inner_join(PTI_up, feature_list, by=c("PTI_700_up" ="locus"))%>%
+  filter(gene_name%in%rownames(SCT_result))
+
+#list up socre pti
+PTI_up_score_list<-list(c(PTI_up_list$gene_name))
+
+PTI_down_list<-inner_join(PTI_down, feature_list, by=c("PTI_down_100" ="locus"))%>%
+  filter(gene_name%in%rownames(SCT_result))
+
+HR_in_list<-inner_join(HR_in, feature_list, by=c("HR_in_specific" ="locus"))%>%
+  filter(gene_name%in%rownames(SCT_result))
+
+HR_out_list<-inner_join(HR_out, feature_list, by=c("out_HR_specific" ="locus"))%>%
+  filter(gene_name%in%rownames(SCT_result))
+
+HR_inandout_list<-inner_join(HR_inandout, feature_list, by=c("IN_and_out_HR" ="locus"))%>%
+  filter(gene_name%in%rownames(SCT_result))
+
+# Meatafeature HR, PTI
+SCT_result <- MetaFeature( object = SCT_result, features = PTI_core_list$gene_name,
+                           meta.name = 'PTI_core_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = PTI_up_list$gene_name,
+                           meta.name = 'PTI_up_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = PTI_down_list$gene_name,
+                           meta.name = 'PTI_down_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = HR_in_list$gene_name,
+                           meta.name = 'HR_in_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = HR_out_list$gene_name,
+                           meta.name = 'HR_out_meta')
+
+SCT_result <- MetaFeature( object = SCT_result, features = HR_inandout_list$gene_name,
+                           meta.name = 'HR_inandout_meta')
+
+```
+
+# add metascore for cell markers, HR, and PTI genes
+```{r}
+mark_M_score_list<-list(c(M_marker_list$gene))
+
+mark_E_score_list<-list(c(E_marker_list$gene))
+
+mark_G_score_list<-list(c(G_marker_list$gene))
+
+mark_V_score_list<-list(c(V_marker_list$gene))
+
+mark_P_score_list<-list(c(P_marker_list$gene))
+
+mark_B_score_list<-list(c(B_marker_list$gene))
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = mark_M_score_list, name = 'Mesophyll_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = mark_E_score_list, name = 'Epidermis_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = mark_G_score_list, name = 'guardcell_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = mark_V_score_list, name = 'vasculature_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = mark_P_score_list, name = 'phloem_score')
+
+SCT_result <- AddModuleScore( object = SCT_result,   ctrl = 5,
+  features = mark_B_score_list, name = 'bunl_shealth_score')
+```
+
+# we add aggregation values for plotting
+# we save the SCT dataset and this Rdata, for future plotting
+# calculate Agggre and introduce into Seurat
+# the output of AGG would be a matrix of each gene, with the combination of clusters, and treatment.
+# it would be useful to produce heatmap, to illustrate the detailed inforamtion of gene in each clusters
+```{r}
+# define the clusters as the ident
+SCT_result<-SetIdent( SCT_result, value = "seurat_clusters" )
+DefaultAssay(SCT_result)<-"SCT"
+
+# produce aggree for all the lists:
+
+cal_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = calium_list$gene_name))
+
+NLR_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = NLR_list$gene_name))
+
+RLK_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = RLK_list$gene_name))
+
+RLP_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = RLP_list$gene_name))
+
+DAMPs_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = DAMPs_list$gene_name))
+
+SA_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = SA_list$gene_name))
+
+WRKY_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = WRKY_list$gene_name))
+
+ROS_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = ROS_list$gene_name))
+
+defense_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = defense_list$gene_name))
+
+JA_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = JA_list$gene_name))
+
+MAPK_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = MAPK_list$gene_name))
+
+
+PAMPs_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = PAMPs_list$gene_name))
+
+known_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = known_list$gene_name))
+
+laser_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = laser_list$gene_name))
+
+AP_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = AP_list$gene_name))
+
+BIO_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = BIO_list$gene_name))
+
+PC_ag<-as.data.frame( AggregateExpression(object = SCT_result, 
+                    group.by=c("orig.ident","pathogen_Cells"), # here we create the combination of 
+                    features = PC_list$gene_name))
+```
+
+
+```{r}
+saveRDS(SCT_result, file='processed/NEW_bt1_to_6/07.1_create_values/added_metafeatures')
+
+save.image("~/Desktop/Single_Cell/processed/NEW_bt1_to_6/07.1_create_values/meta_aggre_all.RData")
+```

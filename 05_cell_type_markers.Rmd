@@ -1,0 +1,108 @@
+---
+title: "05_markers_clusters"
+author: "Bozeng_Tang"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r }
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+
+SCT_result <- readRDS(file='processed/NEW_bt1_to_6/07.1_create_values/added_metafeatures')
+
+DefaultAssay(SCT_result)<-"SCT"
+
+# confirm the clusters
+DimPlot(SCT_result,reduction = "umap", split.by = "group", 
+        group.by = "seurat_clusters", cols = "glasbey")
+
+# ensure the identity
+SCT_result <- SetIdent(SCT_result,value = "seurat_clusters")
+```
+
+# calculate the DEGs for clusters in the datasets
+```{r}
+SCT_result.markers <- FindAllMarkers(SCT_result, 
+                                     only.pos = TRUE, 
+                                     min.pct = 0.1, # at least 10% cells are expressing the marker in one of the groups
+                                     logfc.threshold = 0.4, # FC
+                                     min.diff.pct=0.1) # at least 10% more cells expesssing than the lower group
+
+
+# select the top 10 from the markers
+# select the top 10 from the markers
+top_makr<-SCT_result.markers %>%
+    group_by(cluster) %>%
+    slice_max(n = 5, order_by = avg_log2FC)
+
+# plot the top 10 markers
+#DoHeatmap(SCT_result, features = top_makr$gene)
+
+# load cell type markers, and see if the clustering make sense
+celltype<-read.csv("raw_data/final_marker.csv")
+
+topmark<-SCT_result.markers%>%
+  filter(avg_log2FC>1, p_val_adj<0.05)
+mark_celltype<-inner_join(topmark, celltype, by=c("gene"="gene"))
+
+mark_celltype<-as.character(mark_celltype$gene)
+plotmark<-lapply( X=mark_celltype, FUN = function(x) {
+  x=FeaturePlot(SCT_result, features = x, order = TRUE)
+} )
+#plotmark
+
+```
+
+# another question is: do these marker genes overlap with protoplast-induced genes?
+```{r}
+
+protoplastx<-read.csv("raw_data/QC_genes/protoplast.csv")
+protoplast<-protoplastx%>%
+  filter(log2FoldChange>4, padj<0.01)
+
+dim(protoplast) # 1000 genes are induced in protoplast
+test<-SCT_result.markers%>%
+  filter(gene%in%protoplast$gene)
+dim(test)
+# that is 91 genes. that is not too bad, but we still need to think a way to overrid the protoplasting impact
+
+# if we use 0.25 FC, we will see 10% cluster-enriched genes. it might be worth to remove these 1000 genes afterwards
+```
+
+# merge with known markers defined in experiments, and scRNA-seq
+```{r}
+# template for single gene visualization
+FeaturePlot(SCT_result, features = "ASA1", order = TRUE, pt.size = 0.2,  split.by = "orig.ident")
+
+# merge with cell type markers and see
+celltype<-read.csv("lib/new_cell_type.csv")
+
+
+
+```
+
+
+# now, I need to make the marker genes in a decent way
+```{r}
+markers<-SCT_result.markers%>%
+  filter(avg_log2FC>0.4)%>%
+  filter(pct.2<0.3)
+dim(markers)
+
+# merge with cell type markers and see
+celltype<-read.csv("lib/new_cell_type.csv")
+# this is only about cluster-enriched genes
+mark_celltype<-inner_join(markers, celltype, by=c("gene"="gene"))
+
+write.csv(mark_celltype,"processed/NEW_bt1_to_6/06_marker_genes/mark.csv")
+```

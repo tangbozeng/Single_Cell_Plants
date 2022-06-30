@@ -1,0 +1,214 @@
+---
+title: "06_add_data"
+author: "Bozeng_Tang"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+# this section is very special, I need to add the data we need, and forward to the seurat objective we created in section 4.
+
+#1. pathogen cell barcodes
+```{r }
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+library(tidyverse)
+
+SCT_result <- readRDS(file='processed/NEW_bt1_to_6/04_harmony_and_batch_effects/merged_harmony')
+
+DefaultAssay(SCT_result)<-"SCT"
+
+#now, i manually add the label for ch1 cells, ch2 cells, pc1, pc2 cells, then merge them together as pathogen
+
+ch_shared_cell<-read.csv("lib/pathgen_cells/ch_all.csv")
+pc_shared_cell<-read.csv("lib/pathgen_cells/pc_all.csv")
+
+# ensure these shared cells are still present in the seurat
+CH_cell<-ch_shared_cell%>%
+  filter(V2%in%colnames(SCT_result))
+
+PC_cell<-pc_shared_cell%>%
+  filter(V2%in%colnames(SCT_result))
+
+
+# define the Idents
+SCT_result<-SetIdent( SCT_result, value = "seurat_clusters" )
+
+# we add pathogen asscociated cells with clusters
+## to be safe, we create a new column and save in the seurat
+SCT_result <- SetIdent(SCT_result, cells = CH_cell$V2, value = 'CH')
+SCT_result <- SetIdent(SCT_result, cells = PC_cell$V2, value = 'PC')
+
+# save the column of new identy
+pathogen_cells<-as.data.frame(Idents(SCT_result))
+
+# add into seurat
+SCT_result <- AddMetaData(
+  object = SCT_result,
+  metadata = pathogen_cells,
+  col.name = 'pathogen_Cells')
+
+```
+
+# 2: label the cell types 
+```{r}
+# define the clusters as the ident
+SCT_result<-SetIdent( SCT_result, value = "seurat_clusters" )
+
+# this line is used to check the output
+## Idents(SCT_result)
+
+# now, we define cell types according to the marker genes we studied before
+SCT_result <- RenameIdents(SCT_result, 
+                           '0' = 'M', 
+                           '1' = 'M',
+                           "2" = "Mixed",
+                           "3" = "M",
+                           "4" = "M",
+                           "5" = "Mixed",
+                           "6" = "E",
+                           "7" = "M",
+                           "8" = "M",
+                           "9" = "Mixed",
+                           "10" = "M",
+                           "11" = "V",
+                           "12" = "G",
+                           "13" = "V",
+                           "14" = "E",
+                           "15" = "E",
+                           "16" = "E",
+                           "17" = "E",
+                           "18" = "E",
+                           "19" = "M")
+
+cell_type<-as.data.frame(Idents(SCT_result))
+
+SCT_result <- AddMetaData(
+  object = SCT_result,
+  metadata = cell_type,
+  col.name = 'cell_type')
+#
+```
+
+
+# 3: add AP, BIO, and PC infection genes ()
+## metafeatures, can be used for bulked genes for indivudual cell
+## aggreexpression ONLY for clusters, idents, but not individual cells
+## metaScore, can be used for each genes, or bulked genes
+
+## let us do Aggreexrpression for bigger picuture, and Metafeature for bulked features for each cell
+```{r }
+library(dplyr)
+library(tidyverse)
+
+# read the bulked-seq, but the id is derived from transcript IDs, therefore some of them are duplciated.
+AP<-read.csv("raw_data/defense_genes/bulked_seq/AP_WT.csv")
+BIO<-read.csv("raw_data/defense_genes/bulked_seq/BIO_WT.csv")
+NEC<-read.csv("raw_data/defense_genes/bulked_seq/NEC_WT.csv")
+# counts<-read.csv("raw_data/defense_genes/bulked_seq/countdata.csv")
+
+# I want the response genes to be really clean
+
+AP_up<-AP%>%
+  filter(log2FoldChange_AP>2, padj_AP<0.01)%>%
+  filter( ap_sum>100, wt_sum<10 )%>%
+  select(X)%>%
+  unique() # enure they are not duplicated
+
+Bio_up<-BIO%>%
+  filter( log2FoldChange_BIO>2, padj_BIO<0.01 )%>%
+  filter( bio_sum > 50, wt_sum<10 )%>%
+  filter (ap_sum <20)%>%
+  select(X)%>%
+  unique()
+
+Pc_up<-NEC%>%
+  filter( log2FoldChange_NEC>2, padj_NEC<0.01 )%>%
+  filter( pc_sum>100, wt_sum<10 )%>%
+  select(X)%>%
+  unique()
+
+# define the clusters as the ident
+SCT_result<-SetIdent( SCT_result, value = "seurat_clusters" )
+
+# create new ident as infection_gene type, but they are actually features, we can calculate it later.
+  
+```
+
+# 4. we need to put NLR, TFs, WRKY genes, into the columns as metafeature, to generate analysis afterwards
+
+```{r}
+# read the gene matrix for these gene families
+
+# we have AP_up, BIO_up, PC_up, already
+
+Inter_genes<-read.csv("raw_data/defense_genes/infection_gene.csv")
+known<-read.csv("raw_data/defense_genes/known_induced_genes.csv")
+laser<-read.csv("raw_data/defense_genes/microdissection_Genes.csv")
+feature_list<-read_tsv("lib/features.tsv")
+
+# ensure the IDs meets the feature list first, the gene_name is one
+inter<-inner_join(Inter_genes, feature_list, by=c("Accession"="locus"))
+knowns<-inner_join(known, feature_list, by=c("Locus" ="locus"))
+lasers<-inner_join(laser, feature_list, by=c("Locus" ="locus"))
+AP<-inner_join(AP_up, feature_list, by=c("X"="locus"))
+BIO<-inner_join(Bio_up, feature_list, by=c("X"="locus"))
+PC<-inner_join(Pc_up, feature_list, by=c("X" = "locus"))
+
+
+# filter the ones with low number of cells detected.
+
+#inter_F<-as.character(inter_list$gene_name) # reformat the list into characters
+#matrix_inter<-FetchData(SCT_result, vars = inter_F) # produce the matrix 
+#sum_inter<-colSums(matrix_inter, )
+
+# we have a quick way to do that:1 calcualte percentage of each genes. 2: keep the ones showing good number
+counts <- GetAssayData(SCT_result, slot="counts", assay="SCT")   
+genes.percent.expression <- rowMeans(counts>0 )*100   
+genes.filter <- names(genes.percent.expression[genes.percent.expression>0.4]) # 60 cells are expressing
+gene_filter<-as.data.frame(genes.filter)
+
+# then,  I checked if any of them are completely not detected from the SCT_object
+# AND filted low number of cells
+inter_list<-inter%>%
+  filter(gene_name%in%rownames(SCT_result))%>%
+  filter(gene_name%in%gene_filter$genes.filter)
+
+known_list<-knowns%>%
+  filter(gene_name%in%rownames(SCT_result))%>%
+  filter(gene_name%in%gene_filter$genes.filter)
+
+laser_list<-lasers%>%
+  filter(gene_name%in%rownames(SCT_result))%>%
+  filter(gene_name%in%gene_filter$genes.filter)
+
+AP_list<-AP%>%
+  filter(gene_name%in%rownames(SCT_result))%>%
+  filter(gene_name%in%gene_filter$genes.filter)
+
+BIO_list<-BIO%>%
+  filter(gene_name%in%rownames(SCT_result))%>%
+  filter(gene_name%in%gene_filter$genes.filter)
+
+PC_list<-PC%>%
+  filter(gene_name%in%rownames(SCT_result))%>%
+  filter(gene_name%in%gene_filter$genes.filter)
+```
+
+```{r}
+saveRDS(SCT_result, file='processed/NEW_bt1_to_6/06_marker_genes/06_SCT')
+saveRDS(inter_list, file='processed/NEW_bt1_to_6/06_marker_genes/infection')
+saveRDS(known_list, file='processed/NEW_bt1_to_6/06_marker_genes/known_gene')
+saveRDS(laser_list, file='processed/NEW_bt1_to_6/06_marker_genes/laser_list')
+saveRDS(AP_list, file='processed/NEW_bt1_to_6/06_marker_genes/AP_list')
+saveRDS(BIO_list, file='processed/NEW_bt1_to_6/06_marker_genes/BIO_list')
+saveRDS(PC_list, file='processed/NEW_bt1_to_6/06_marker_genes/PC_list')
+
+```

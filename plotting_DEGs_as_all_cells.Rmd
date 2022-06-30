@@ -1,0 +1,43 @@
+---
+title: "plot_DEGs_as_whole_cells"
+author: "BT"
+date: "09/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r, error=TRUE}
+
+library(Seurat)
+library(ggplot2)
+library(monocle)
+
+SCT_result<-readRDS("processed/NEW_bt1_to_6/07.1_create_values/added_metafeatures")
+
+SCT_result.markers <- FindAllMarkers(SCT_result, 
+                                     only.pos = TRUE, 
+                                     min.pct = 0.1, # at least 10% cells are expressing the marker in one of the groups
+                                     logfc.threshold = 0.4, # FC
+                                     min.diff.pct=0.1) 
+
+general_markers<-as.character(rownames(SCT_result.markers))
+
+plotmark0<-lapply( X=general_markers, FUN = function(x) {
+  x=FeaturePlot(SCT_result,
+                features = x,  coord.fixed=c(2.2), order = TRUE, pt.size = 0.1, split.by = "group", slot = "counts")
+} )
+
+plotmark0
+
+SCT_result<-SetIdent(SCT_result, value = "group")
+
+DEGs_for_ch_wt<-FindMarkers(SCT_result,
+                            ident.1 = "ch")
+```
+

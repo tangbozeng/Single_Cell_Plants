@@ -1,0 +1,53 @@
+---
+title: "1_collect_raw_Data_from_10x"
+author: "BT"
+date: "03/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r }
+library(Seurat)
+library(dplyr)
+library("BiocParallel")
+register( 
+  MulticoreParam (
+    workers = 8 ))
+
+# loading each sample
+
+WT1<-Read10X(data.dir = "raw_data/10x/bt1/")
+CH1<-Read10X(data.dir = "raw_data/10x/bt2/")
+PC1<-Read10X(data.dir = "raw_data/10x/bt3/")
+WT2<-Read10X(data.dir = "raw_data/10x/bt4/")
+CH2<-Read10X(data.dir = "raw_data/10x/bt5/")
+PC2<-Read10X(data.dir = "raw_data/10x/bt6/")
+```
+
+# create seurat ojectives
+
+```{r}
+WT1_seurat <- CreateSeuratObject(counts = WT1, project = "WT1", min.cells = 3, min.features = 500)
+CH1_seurat <- CreateSeuratObject(counts = CH1, project = "CH1", min.cells = 3, min.features = 500)
+PC1_seurat <- CreateSeuratObject(counts = PC1, project = "PC1", min.cells = 3, min.features = 500)
+
+WT2_seurat <- CreateSeuratObject(counts = WT2, project = "WT2", min.cells = 3, min.features = 500)
+CH2_seurat <- CreateSeuratObject(counts = CH2, project = "CH2", min.cells = 3, min.features = 500)
+PC2_seurat <- CreateSeuratObject(counts = PC2, project = "PC2", min.cells = 3, min.features = 500)
+```
+
+# save the result
+```{r}
+saveRDS(WT1_seurat, file='processed/NEW_bt1_to_6/WT1_01')
+saveRDS(CH1_seurat, file='processed/NEW_bt1_to_6/CH1_01')
+saveRDS(PC1_seurat, file='processed/NEW_bt1_to_6/PC1_01')
+saveRDS(WT2_seurat, file='processed/NEW_bt1_to_6/WT2_01')
+saveRDS(CH2_seurat, file='processed/NEW_bt1_to_6/CH2_01')
+saveRDS(PC2_seurat, file='processed/NEW_bt1_to_6/PC2_01')
+```
+

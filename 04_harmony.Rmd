@@ -1,0 +1,179 @@
+---
+title: "4_harmony"
+author: "Bozeng_Tang"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+library(tidyverse)
+
+merged <- readRDS(file='processed/NEW_bt1_to_6/03_filtering_QC_merging/merged')
+```
+
+
+# this is harmony with SCT, and cell cycle removal
+# before harmony
+
+```{r}
+# read the list of cell-cycle genes
+cell_cyl<-read.csv("raw_data/QC_genes/cell_cycle_genes.csv")
+# read list of features
+feature_list<-read_tsv("lib/features.tsv")
+# correct the gene names
+cycle_geme<-inner_join(cell_cyl, feature_list, by=c("Locus" ="locus"))
+
+# define the list of sgenes and g2m genes
+s.genes <- cycle_geme%>%
+  filter(Phase=="G1-S")
+g2m.genes<- cycle_geme%>%
+  filter(Phase=="G2-M")
+```
+
+# create merged 
+# perform a clustering without harmony integration
+
+```{r, warning=FALSE}
+# perform a clustering without harmony integration
+merged <- CellCycleScoring(merged, 
+                               s.features = s.genes$gene_name, 
+                               g2m.features = g2m.genes$gene_name, 
+                               set.ident = TRUE)
+# perform SCT normalization
+merged<- SCTransform(merged,
+                           vars.to.regress =  c("S.Score", "G2M.Score"))
+# RunPCA
+merged <- RunPCA(merged, npcs = 30, verbose = F)
+
+# RunUMAP
+merged<- RunUMAP(merged, reduction = "pca", 
+                        dims = 1:30, verbose = T)
+
+merged <- SetIdent(merged, value = "seurat_clusters")
+DimPlot(merged,reduction = "umap", split.by = "orig.ident")
+DimPlot(merged,reduction = "umap", split.by = "replicates")
+DimPlot(merged,reduction = "umap", split.by = "group")
+```
+
+# run the harmony
+```{r}
+## run harmony with scale data
+merged <- merged %>% RunHarmony("orig.ident",  # the variable to remove
+                                plot_convergence = T,
+                                assay.use = "SCT") # the assay to use
+# check the embeddinggs:
+harmony_embeddings <- Embeddings(merged, 'harmony')
+harmony_embeddings[1:5, 1:5]
+
+DefaultAssay(merged)<-"SCT"
+
+# Perform the clustering
+merged <- RunUMAP(merged, 
+                          reduction = "harmony", 
+                          dims = 1:30, verbose = F) %>% 
+    FindNeighbors(reduction = "harmony", 
+                  k.param = 10, dims = 1:30) %>% 
+    FindClusters(resolution=0.5) %>%  # here is an important parameter to define number of clusters
+    identity()
+
+merged <- SetIdent(merged,value = "orig.ident")
+library(ggplot2)
+DimPlot(merged,reduction = "umap", split.by = "group", group.by = "seurat_clusters",cols = "glasbey")
+DimPlot(merged,reduction = "umap", split.by = "orig.ident", group.by = "seurat_clusters",cols = "glasbey")
+
+DimPlot(merged,reduction = "umap", split.by = "replicates", group.by = "seurat_clusters",cols = "glasbey")
+
+DimPlot(merged,reduction = "umap", split.by = c("group"), group.by = "seurat_clusters",cols = "glasbey")+
+  facet_grid(group~seurat_clusters)
+
+```
+
+# now, I want to see if we have different result from scale data from RNA assay
+
+```{r}
+# define the RNA as default assay with scale.data as normalization method
+DefaultAssay(merged)<-"RNA"
+RNA_assay<-merged
+RNA_assay <- NormalizeData(RNA_assay)
+RNA_assay  <- FindVariableFeatures(RNA_assay, selection.method = "vst", nfeatures = 2000)
+RNA_assay <- ScaleData(RNA_assay, vars.to.regress =  c("S.Score", "G2M.Score"))
+
+RNA_assay <- RunPCA(RNA_assay)
+# add a step for harmony
+RNA_assay <- RunHarmony( RNA_assay, "orig.ident" )
+#RNA_assay <- JackStraw(RNA_assay, num.replicate = 100)
+#RNA_assay <- ScoreJackStraw(RNA_assay, dims = 1:20)
+RNA_assay <- RunUMAP(RNA_assay, reduction = "harmony", dims = 1:10) 
+RNA_assay <- FindNeighbors(RNA_assay, reduction = "harmony")
+RNA_assay <- FindClusters(RNA_assay, resolution=0.4) 
+
+RNA_assay <- SetIdent(RNA_assay,value = "orig.ident")
+library(ggplot2)
+DimPlot(RNA_assay,reduction = "umap", split.by = "group", group.by = "seurat_clusters",cols = "glasbey")
+DimPlot(RNA_assay,reduction = "umap", split.by = "orig.ident", group.by = "seurat_clusters",cols = "glasbey")
+
+DimPlot(RNA_assay,reduction = "umap", split.by = "replicates", group.by = "seurat_clusters",cols = "glasbey")
+
+DimPlot(RNA_assay,reduction = "umap", split.by = "group", group.by = "seurat_clusters",cols = "glasbey")+
+  facet_grid(group~seurat_clusters)
+```
+
+# visualize the propertion of the clusters
+```{r}
+plot_integrated_clusters = function (srat) { 
+  ## take an integrated Seurat object, plot distributions over orig.ident
+  library(Seurat)
+  library(patchwork)
+  library(ggplot2)
+  library(reshape2)
+  library(RColorBrewer)
+  
+  
+  count_table <- table(srat@meta.data$seurat_clusters, srat@meta.data$group)
+  count_mtx   <- as.data.frame.matrix(count_table)
+  count_mtx$cluster <- rownames(count_mtx)
+  melt_mtx    <- melt(count_mtx)
+  melt_mtx$cluster <- as.factor(melt_mtx$cluster)
+
+  cluster_size   <- aggregate(value ~ cluster, data = melt_mtx, FUN = sum)
+  
+  sorted_labels <- paste(sort(as.integer(levels(cluster_size$cluster)),decreasing = T))
+  cluster_size$cluster <- factor(cluster_size$cluster,levels = sorted_labels)
+  melt_mtx$cluster <- factor(melt_mtx$cluster,levels = sorted_labels)
+  
+  colnames(melt_mtx)[2] <- "dataset"
+  
+  
+  p1 <- ggplot(cluster_size, aes(y= cluster,x = value)) + geom_bar(position="dodge", stat="identity",fill = "grey60") + 
+    theme_bw() + scale_x_log10() + xlab("Cells per cluster, log10 scale") + ylab("")
+  p2 <- ggplot(melt_mtx,aes(x=cluster,y=value,fill=dataset)) + 
+    geom_bar(position="fill", stat="identity") + theme_bw() + coord_flip() + 
+    scale_fill_brewer(palette = "Set2") +
+    ylab("Fraction of cells in each dataset") + xlab("Cluster number") + theme(legend.position="top")
+  
+  p2 + p1 + plot_layout(widths = c(3,1))
+  
+  
+}
+
+plot_integrated_clusters(merged)
+
+plot_integrated_clusters(RNA_assay)
+```
+
+# save the datasets
+```{r}
+saveRDS(merged, file='processed/NEW_bt1_to_6/04_harmony_and_batch_effects/merged_harmony')
+saveRDS(RNA_assay, file='processed/NEW_bt1_to_6/04_harmony_and_batch_effects/RNA_assay_harmony')
+```
+

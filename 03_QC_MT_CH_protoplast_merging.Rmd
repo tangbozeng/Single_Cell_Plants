@@ -1,0 +1,217 @@
+---
+title: "03_filter_QC_MT_CH_protoplast"
+author: "BT"
+date: "03/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r }
+library(DoubletFinder)
+library(Seurat)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+
+wt1_seurat <- readRDS(file='processed/NEW_bt1_to_6/02_doublet/02_wt1')
+wt2_seurat <- readRDS(file='processed/NEW_bt1_to_6/02_doublet/02_wt2')
+ch1_seurat <- readRDS(file='processed/NEW_bt1_to_6/02_doublet/02_ch1')
+ch2_seurat <- readRDS(file='processed/NEW_bt1_to_6/02_doublet/02_ch2')
+pc1_seurat <- readRDS(file='processed/NEW_bt1_to_6/02_doublet/02_pc1')
+pc2_seurat <- readRDS(file='processed/NEW_bt1_to_6/02_doublet/02_pc2')
+
+```
+
+# investigate the CH genes and plot with ridgeplot
+```{r}
+wt1_seurat[["percent.mt"]] <- PercentageFeatureSet(wt1_seurat, pattern = "^ATMG")
+wt2_seurat[["percent.mt"]] <- PercentageFeatureSet(wt2_seurat, pattern = "^ATMG")
+ch1_seurat[["percent.mt"]] <- PercentageFeatureSet(ch1_seurat, pattern = "^ATMG")
+ch2_seurat[["percent.mt"]] <- PercentageFeatureSet(ch2_seurat, pattern = "^ATMG")
+pc1_seurat[["percent.mt"]] <- PercentageFeatureSet(pc1_seurat, pattern = "^ATMG")
+pc2_seurat[["percent.mt"]] <- PercentageFeatureSet(pc2_seurat, pattern = "^ATMG")
+
+wt1_seurat[["percent.ch"]] <- PercentageFeatureSet(wt1_seurat, pattern = "^ATC")
+wt2_seurat[["percent.ch"]] <- PercentageFeatureSet(wt2_seurat, pattern = "^ATC")
+ch1_seurat[["percent.ch"]] <- PercentageFeatureSet(ch1_seurat, pattern = "^ATC")
+ch2_seurat[["percent.ch"]] <- PercentageFeatureSet(ch2_seurat, pattern = "^ATC")
+pc1_seurat[["percent.ch"]] <- PercentageFeatureSet(pc1_seurat, pattern = "^ATC")
+pc2_seurat[["percent.ch"]] <- PercentageFeatureSet(pc2_seurat, pattern = "^ATC")
+
+VlnPlot(wt1_seurat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt","percent.ch"), ncol = 4)
+VlnPlot(wt2_seurat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt","percent.ch"), ncol = 4)
+VlnPlot(ch1_seurat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt","percent.ch"), ncol = 4)
+VlnPlot(ch2_seurat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt","percent.ch"), ncol = 4)
+VlnPlot(pc1_seurat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt","percent.ch"), ncol = 4)
+VlnPlot(pc2_seurat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt","percent.ch"), ncol = 4)
+```
+
+# Ridgeplot for each
+```{r}
+wt1_seurat <- SetIdent(wt1_seurat , value = "seurat_clusters")
+wt2_seurat <- SetIdent(wt2_seurat , value = "seurat_clusters")
+ch1_seurat <- SetIdent(ch1_seurat , value = "seurat_clusters")
+ch2_seurat <- SetIdent(ch2_seurat , value = "seurat_clusters")
+pc1_seurat <- SetIdent(pc1_seurat , value = "seurat_clusters")
+pc2_seurat <- SetIdent(pc2_seurat , value = "seurat_clusters")
+
+# subset: bt6_QC<-subset(bt6_QC, subset=DF.classifications_0.25_0.09_203=="Singlet")
+```
+
+
+# subset and remove low QC cells
+# cut off is 400, 40000
+
+```{r}
+wt1_seurat <- subset(wt1_seurat, subset = nFeature_RNA > 200 & nFeature_RNA < 40000 & percent.mt < 10 & percent.ch<10)
+wt2_seurat <- subset(wt2_seurat, subset = nFeature_RNA > 200 & nFeature_RNA < 40000 & percent.mt < 10 & percent.ch<10)
+
+ch1_seurat <- subset(ch1_seurat, subset = nFeature_RNA > 200 & nFeature_RNA < 40000 & percent.mt < 10 & percent.ch<10)
+ch2_seurat <- subset(ch2_seurat, subset = nFeature_RNA > 300 & nFeature_RNA < 40000 & percent.mt < 10 & percent.ch<10)
+
+pc1_seurat <- subset(pc1_seurat, subset = nFeature_RNA > 200 & nFeature_RNA < 40000 & percent.mt < 10 & percent.ch<10)
+pc2_seurat <- subset(pc2_seurat, subset = nFeature_RNA > 200 & nFeature_RNA < 40000 & percent.mt < 10 & percent.ch<10)
+```
+
+# investigate prtoplast
+```{r}
+# loading protoplast induced genes
+
+library(dplyr)
+library(readr)
+feature_list<-read_tsv("lib/features.tsv")
+protoplastx<-read.csv("raw_data/QC_genes/protoplast.csv")
+proto<-protoplastx%>%
+  filter(log2FoldChange>6, padj<0.01)
+library(tidyverse)
+proto_id<-inner_join(proto, feature_list, by=c("gene"="locus"))
+
+dim(proto_id)
+
+# I need to output all the features from the objectives and merge with prtoplast genes
+protoplast<-proto_id%>%
+  filter(gene_name%in%rownames(wt1_seurat))%>%
+  filter(gene_name%in%rownames(wt2_seurat))%>%
+  filter(gene_name%in%rownames(ch1_seurat))%>%
+  filter(gene_name%in%rownames(ch2_seurat))%>%
+  filter(gene_name%in%rownames(pc1_seurat))%>%
+  filter(gene_name%in%rownames(pc2_seurat))
+
+DefaultAssay(wt1_seurat) <- "SCT"
+DefaultAssay(wt2_seurat) <- "SCT"
+DefaultAssay(ch1_seurat) <- "SCT"
+DefaultAssay(ch2_seurat) <- "SCT"
+DefaultAssay(pc1_seurat) <- "SCT"
+DefaultAssay(pc2_seurat) <- "SCT"
+
+wt1_seurat[["percent.proto"]] <- PercentageFeatureSet(wt1_seurat, features = protoplast$gene_name)
+wt2_seurat[["percent.proto"]] <- PercentageFeatureSet(wt2_seurat, features = protoplast$gene_name)
+ch1_seurat[["percent.proto"]] <- PercentageFeatureSet(ch1_seurat, features = protoplast$gene_name)
+ch2_seurat[["percent.proto"]] <- PercentageFeatureSet(ch2_seurat, features = protoplast$gene_name)
+pc1_seurat[["percent.proto"]] <- PercentageFeatureSet(pc1_seurat, features = protoplast$gene_name)
+pc2_seurat[["percent.proto"]] <- PercentageFeatureSet(pc2_seurat, features = protoplast$gene_name)
+```
+
+
+```{r}
+wt1_seurat <- SetIdent(wt1_seurat , value = "seurat_clusters")
+wt2_seurat <- SetIdent(wt2_seurat , value = "seurat_clusters")
+ch1_seurat <- SetIdent(ch1_seurat , value = "seurat_clusters")
+ch2_seurat <- SetIdent(ch2_seurat , value = "seurat_clusters")
+pc1_seurat <- SetIdent(pc1_seurat , value = "seurat_clusters")
+pc2_seurat <- SetIdent(pc2_seurat , value = "seurat_clusters")
+
+RidgePlot(wt1_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(wt2_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(ch1_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(ch2_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(pc1_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(pc2_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+
+wt1_seurat <- SetIdent(wt1_seurat , value = "orig.ident")
+wt2_seurat <- SetIdent(wt2_seurat , value = "orig.ident")
+ch1_seurat <- SetIdent(ch1_seurat , value = "orig.ident")
+ch2_seurat <- SetIdent(ch2_seurat , value = "orig.ident")
+pc1_seurat <- SetIdent(pc1_seurat , value = "orig.ident")
+pc2_seurat <- SetIdent(pc2_seurat , value = "orig.ident")
+
+RidgePlot(wt1_seurat, features = c("percent.mt","percent.ch", "percent.proto")) #+xlim(c(0,100))
+RidgePlot(wt2_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(ch1_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(ch2_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(pc1_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+RidgePlot(pc2_seurat, features = c("percent.mt","percent.ch", "percent.proto"))
+
+
+```
+
+
+# remove these redundance columns, only keep the protoplasting genes
+```{r}
+wt1_seurat$pANN_0.25_0.09_235<- NULL
+wt1_seurat$DF.classifications_0.25_0.09_235 <- NULL
+wt1_seurat$percent.mt <- NULL
+wt1_seurat$percent.ch <- NULL
+
+wt2_seurat$pANN_0.25_0.09_244<- NULL
+wt2_seurat$DF.classifications_0.25_0.09_244 <- NULL
+wt2_seurat$percent.mt <- NULL
+wt2_seurat$percent.ch <- NULL
+
+ch1_seurat$pANN_0.25_0.09_263<- NULL
+ch1_seurat$DF.classifications_0.25_0.09_263 <- NULL
+ch1_seurat$percent.mt <- NULL
+ch1_seurat$percent.ch <- NULL
+
+ch2_seurat$pANN_0.25_0.09_909<- NULL
+ch2_seurat$DF.classifications_0.25_0.09_909 <- NULL
+ch2_seurat$percent.mt <- NULL
+ch2_seurat$percent.ch <- NULL
+
+pc1_seurat$pANN_0.25_0.09_26<- NULL
+pc1_seurat$DF.classifications_0.25_0.09_26 <- NULL
+pc1_seurat$percent.mt <- NULL
+pc1_seurat$percent.ch <- NULL
+
+pc2_seurat$pANN_0.25_0.09_27<- NULL
+pc2_seurat$DF.classifications_0.25_0.09_27 <- NULL
+pc2_seurat$percent.mt <- NULL
+pc2_seurat$percent.ch <- NULL
+```
+
+# merge the datasets, and be careful with replciates and name the samples
+```{r}
+wt_seurat <- merge(wt1_seurat, 
+                   y = wt2_seurat, add.cell.ids = c("wt1", "wt2"), project = "wt")# merge bt1 and bt4
+wt_seurat@meta.data$group<-"wt"
+
+ch_seurat<- merge(ch1_seurat, ch2_seurat, add.cell.ids=c("ch1","ch2"), project = "ch") # merge bt2 and bt5
+ch_seurat@meta.data$group<-"ch"
+
+pc_seurat<- merge(pc1_seurat, pc2_seurat, add.cell.ids=c("pc1","pc2"), project = "pc")
+pc_seurat@meta.data$group<-"pc"
+
+all_seurat<- merge(wt_seurat, y=c(ch_seurat, pc_seurat), add.cell.ids = c("wt","ch","pc"), project = "all_seurat")
+
+replciate_id<-read.csv("lib/replicates_id.csv")
+all_seurat<- AddMetaData(all_seurat, metadata = replciate_id$replciates, col.name = "replicates" )
+```
+
+
+# save the datasets and move forwards
+```{r}
+saveRDS(wt1_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/wt1')
+saveRDS(wt2_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/wt2')
+saveRDS(ch1_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/ch1')
+saveRDS(ch2_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/ch2')
+saveRDS(pc1_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/pc1')
+saveRDS(pc2_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/pc2')
+
+saveRDS(all_seurat, file='processed/NEW_bt1_to_6/03_filtering_QC_merging/merged')
+```
+

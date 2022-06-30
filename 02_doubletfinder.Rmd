@@ -1,0 +1,192 @@
+---
+title: "02_doubletfinder"
+author: "BT"
+date: "03/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+# 
+```{r}
+library(DoubletFinder)
+library(Seurat)
+library(dplyr)
+library(tidyverse)
+
+WT1_seurat <- readRDS(file='processed/NEW_bt1_to_6/WT1_01')
+CH1_seurat <- readRDS(file='processed/NEW_bt1_to_6/CH1_01')
+PC1_seurat <- readRDS(file='processed/NEW_bt1_to_6/PC1_01')
+WT2_seurat <- readRDS(file='processed/NEW_bt1_to_6/WT2_01')
+CH2_seurat <- readRDS(file='processed/NEW_bt1_to_6/CH2_01')
+PC2_seurat <- readRDS(file='processed/NEW_bt1_to_6/PC2_01')
+```
+
+# create a seurat objective with initial normalization, and PCA, which would facilitate doublet removal
+```{r}
+creat_seu<-function(x){            # pass in the filename
+  x<-SCTransform(x, verbose = FALSE)%>%
+    RunPCA()%>%
+    RunUMAP(dims = 1:30)
+    }
+
+WT1<-creat_seu(WT1_seurat)
+CH1<-creat_seu(CH1_seurat)
+PC1<-creat_seu(PC1_seurat)
+
+WT2<-creat_seu(WT2_seurat)
+CH2<-creat_seu(CH2_seurat)
+PC2<-creat_seu(PC2_seurat)
+```
+
+# pK identication without ground-truth for each
+```{r}
+# sweep list for each
+#sweep_list_wt1<- paramSweep_v3( WT1,  PCs = 1:10, sct=TRUE) # it could be changed if we use SCT
+#sweep_list_wt2<- paramSweep_v3( WT2,  PCs = 1:10, sct=TRUE)
+#sweep_list_ch1<- paramSweep_v3( CH1,  PCs = 1:10, sct=TRUE)
+#sweep_list_ch2<- paramSweep_v3( CH2,  PCs = 1:10, sct=TRUE)
+#sweep_list_pc1<- paramSweep_v3( PC1,  PCs = 1:10, sct=TRUE)
+#sweep_list_pc2<- paramSweep_v3( PC2,  PCs = 1:10, sct=TRUE)
+
+# sweep state for each
+#weep_stat_wt1 <- summarizeSweep( sweep_list_wt1, GT = FALSE )
+#weep_stat_ch1 <- summarizeSweep( sweep_list_ch1, GT = FALSE )
+#weep_stat_pc1 <- summarizeSweep( sweep_list_pc1, GT = FALSE )
+#weep_stat_wt2 <- summarizeSweep( sweep_list_wt2, GT = FALSE )
+#weep_stat_ch2 <- summarizeSweep( sweep_list_ch2, GT = FALSE )
+#weep_stat_pc2 <- summarizeSweep( sweep_list_pc2, GT = FALSE )
+
+# calculate the pk values
+
+#bc_wt1 <- find.pK( weep_stat_wt1 )
+#bc_wt2 <- find.pK( weep_stat_wt2 )
+#bc_ch1 <- find.pK( weep_stat_ch1 )
+#bc_ch2 <- find.pK( weep_stat_ch2 )
+#bc_pc1 <- find.pK( weep_stat_pc1 )
+#bc_pc2 <- find.pK( weep_stat_pc2 )
+
+# create annotation and caluclate p-values and pnn, pk to detect doublet
+annotations_wt1 <- WT1@meta.data$seurat_clusters
+annotations_wt2 <- WT2@meta.data$seurat_clusters
+annotations_ch1 <- CH1@meta.data$seurat_clusters
+annotations_ch2 <- CH2@meta.data$seurat_clusters
+annotations_pc1 <- PC1@meta.data$seurat_clusters
+annotations_pc2 <- PC2@meta.data$seurat_clusters
+
+homotypic_wt1<- modelHomotypic(annotations_wt1)  
+homotypic_wt2<- modelHomotypic(annotations_wt2) 
+homotypic_ch1<- modelHomotypic(annotations_ch1) 
+homotypic_ch2<- modelHomotypic(annotations_ch2) 
+homotypic_pc1<- modelHomotypic(annotations_pc1) 
+homotypic_pc2<- modelHomotypic(annotations_pc2) 
+
+# Here, we have nEXP
+nExp_poi_wt1 <- round(0.05*nrow(WT1@meta.data))
+nExp_poi_wt2 <- round(0.05*nrow(WT2@meta.data))
+nExp_poi_ch1 <- round(0.05*nrow(CH1@meta.data))
+nExp_poi_ch2 <- round(0.1*nrow(CH2@meta.data))
+nExp_poi_pc1 <- round(0.01*nrow(PC1@meta.data))
+nExp_poi_pc2 <- round(0.01*nrow(PC2@meta.data))
+
+nExp_adj_wt1 <- round( nExp_poi_wt1*( 1 - homotypic_wt1 ))
+nExp_adj_wt2 <- round( nExp_poi_wt2*( 1 - homotypic_wt2 ))
+nExp_adj_ch1 <- round( nExp_poi_ch1*( 1 - homotypic_ch1 ))
+nExp_adj_ch2 <- round( nExp_poi_ch2*( 1 - homotypic_ch2 ))
+nExp_adj_pc1 <- round( nExp_poi_pc1*( 1 - homotypic_pc1 ))
+nExp_adj_pc2 <- round( nExp_poi_pc2*( 1 - homotypic_pc2 ))
+
+```
+
+# Detect doublet
+```{r}
+
+result_wt1 <- doubletFinder_v3(WT1, PCs = 1:10, pN = 0.25, pK = 0.09, nExp = nExp_poi_wt1, 
+                               reuse.pANN = FALSE, sct = TRUE)
+
+result_wt2 <- doubletFinder_v3(WT2, PCs = 1:10, pN = 0.25, pK = 0.09, nExp = nExp_poi_wt2, 
+                               reuse.pANN = FALSE, sct = TRUE)
+
+result_ch1 <- doubletFinder_v3(CH1, PCs = 1:10, pN = 0.25, pK = 0.09, nExp = nExp_poi_ch1, 
+                               reuse.pANN = FALSE, sct = TRUE)
+
+result_ch2 <- doubletFinder_v3(CH2, PCs = 1:10, pN = 0.25, pK = 0.09, nExp = nExp_poi_ch2, 
+                               reuse.pANN = FALSE, sct = TRUE)
+
+result_pc1 <- doubletFinder_v3(PC1, PCs = 1:10, pN = 0.25, pK = 0.09, nExp = nExp_poi_pc1, 
+                               reuse.pANN = FALSE, sct = TRUE)
+
+result_pc2 <- doubletFinder_v3(PC2, PCs = 1:10, pN = 0.25, pK = 0.09, nExp = nExp_poi_pc2, 
+                               reuse.pANN = FALSE, sct = TRUE)
+
+# produce fin
+#result_wt1 <- doubletFinder_v3(result_wt1, PCs = 1:10, pN = 0.25, pK = 0.09, 
+ #                              nExp = nExp_adj_wt1, 
+  #                             reuse.pANN = "pANN_0.25_0.09_235", sct = TRUE)
+
+#result_wt2 <- doubletFinder_v3(result_wt1, PCs = 1:10, pN = 0.25, pK = 0.09, 
+   #                            nExp = nExp_adj_wt2, 
+    #                           reuse.pANN = "pANN_0.25_0.09_366", sct = TRUE)
+
+#result_ch1 <- doubletFinder_v3(result_ch1, PCs = 1:10, pN = 0.25, pK = 0.09, 
+     #                          nExp = nExp_adj_ch1, 
+      #                         reuse.pANN = "pANN_0.25_0.09_366", sct = TRUE)
+
+#result_ch2 <- doubletFinder_v3(result_ch2, PCs = 1:10, pN = 0.25, pK = 0.09, 
+       #                        nExp = nExp_adj_ch2, 
+        #                       reuse.pANN = "pANN_0.25_0.09_366", sct = TRUE)
+
+#result_pc1 <- doubletFinder_v3(result_pc1, PCs = 1:10, pN = 0.25, pK = 0.09, 
+         #                      nExp = nExp_adj_pc1, 
+          #                     reuse.pANN = "pANN_0.25_0.09_366", sct = TRUE)
+
+#result_pc2 <- doubletFinder_v3(result_pc2, PCs = 1:10, pN = 0.25, pK = 0.09, 
+ #                              nExp = nExp_adj_pc2, 
+  #                             reuse.pANN = "pANN_0.25_0.09_366", sct = TRUE)
+
+
+```
+
+# produce the final result from doublet detection
+```{r}
+DimPlot( result_wt1, group.by = "DF.classifications_0.25_0.09_235" )
+DimPlot( result_wt2, group.by = "DF.classifications_0.25_0.09_244" )
+
+DimPlot( result_ch1, group.by = "DF.classifications_0.25_0.09_263" )
+DimPlot( result_ch2, group.by = "DF.classifications_0.25_0.09_909" )
+
+DimPlot( result_pc1, group.by = "DF.classifications_0.25_0.09_26" )
+DimPlot( result_pc2, group.by = "DF.classifications_0.25_0.09_27" )
+
+# get the idents back to doublet-singlet
+result_wt1 <- SetIdent(result_wt1, value = "DF.classifications_0.25_0.09_235")
+result_wt2 <- SetIdent(result_wt2, value = "DF.classifications_0.25_0.09_244")
+result_ch1 <- SetIdent(result_ch1, value = "DF.classifications_0.25_0.09_263")
+result_ch2 <- SetIdent(result_ch2, value = "DF.classifications_0.25_0.09_909")
+result_pc1 <- SetIdent(result_pc1, value = "DF.classifications_0.25_0.09_26")
+result_pc2 <- SetIdent(result_pc2, value = "DF.classifications_0.25_0.09_27")
+
+# cut off the doublet
+singlet_wt1<-subset( result_wt1,  idents = "Singlet")
+singlet_wt2<-subset( result_wt2,  idents = "Singlet")
+singlet_ch1<-subset( result_ch1,  idents = "Singlet")
+singlet_ch2<-subset( result_ch2,  idents = "Singlet")
+singlet_pc1<-subset( result_pc1,  idents = "Singlet")
+singlet_pc2<-subset( result_pc2,  idents = "Singlet")
+
+
+
+saveRDS(singlet_wt1, file='processed/NEW_bt1_to_6/02_doublet/02_wt1')
+saveRDS(singlet_wt2, file='processed/NEW_bt1_to_6/02_doublet/02_wt2')
+saveRDS(singlet_ch1, file='processed/NEW_bt1_to_6/02_doublet/02_ch1')
+saveRDS(singlet_ch2, file='processed/NEW_bt1_to_6/02_doublet/02_ch2')
+saveRDS(singlet_pc1, file='processed/NEW_bt1_to_6/02_doublet/02_pc1')
+saveRDS(singlet_pc2, file='processed/NEW_bt1_to_6/02_doublet/02_pc2')
+```
+
+
+# 

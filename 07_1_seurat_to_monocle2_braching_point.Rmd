@@ -1,0 +1,64 @@
+---
+title: "07_1_transform_into_monocle2"
+author: "Bozeng_Tang"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r }
+library(Seurat)
+library(harmony)
+library(SeuratWrappers)
+library(dplyr)
+library(tidyverse)
+library(monocle)
+# read the output file from last section
+SCT_result <- readRDS(file='processed/NEW_bt1_to_6/07.1_create_values/added_metafeatures')
+
+
+```
+
+# transform Seurat into monocle
+
+```{r}
+data <- as(as.matrix(SCT_result@assays$SCT@data), 'sparseMatrix')
+
+pd<-new("AnnotatedDataFrame", data=SCT_result@meta.data)
+
+my_fData <- data.frame(gene_short_name = row.names(data), row.names = row.names(data))
+
+fd <- new('AnnotatedDataFrame', data = my_fData)
+
+my_cds <- newCellDataSet(data,
+                         phenoData = pd,
+                         featureData = fd,
+                         lowerDetectionLimit = 0.5,
+                         expressionFamily = negbinomial.size())
+```
+
+# normalization, and size factor calculation
+```{r}
+my_cds <- estimateSizeFactors(my_cds)
+
+my_cds <- detectGenes(my_cds, min_expr = 0.1) # it tallies the nubmer of cells expressing a gene
+
+# pData(my_cds)  is the cell information
+# fData(my_cds) is the gene information
+
+```
+
+# a good example to show the value distribution
+```{r}
+
+# calculate UMI distribution
+pData(my_cds)$UMI <- Matrix::colSums(exprs(my_cds))
+ggplot(pData(my_cds), aes(num_genes_expressed, UMI)) + geom_point() 
+
+saveRDS(my_cds, file='processed/NEW_bt1_to_6/07.1_create_values/my_cds')
+```

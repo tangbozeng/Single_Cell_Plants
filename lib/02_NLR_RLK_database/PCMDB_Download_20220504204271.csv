@@ -1,0 +1,497 @@
+Species_type,Tissus_type,Tissue_type_PO,Cell_type,Cell_type_PO,Cell_marker_name,Gene_symbol,Gene_id,Gene_id_rap,Protein_name,Protein_id,Marker_resource,PMID,Note_gene_type,Description
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,NAC003,AT1G02220,,,,Experimental,31960459,Cell-Marker gene,NAC domain containing protein 3
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,NAC003,AT1G02220,,,,Experimental,31660587,Cell-Marker gene,NAC domain containing protein 3
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,AT1G08760,AT1G08760,,,,Experimental,29133465,Cell-Marker gene,"GPI-anchored adhesin-like protein, putative (DUF936)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AVP1,AT1G15690,,,,Experimental,26530315,Cell-Marker gene,Inorganic H pyrophosphatase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,ABCG11,AT1G17840,,,,Experimental,24112720,Cell-Marker gene,white-brown complex-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G21920,AT1G21920,,,,Experimental,30670485,Cell-Marker gene,Histone H3 K4-specific methyltransferase SET7/9 family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,7647685,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,24777345,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,SUC2,AT1G22710,,,,Experimental,11087840,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,31197803,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,25149544,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,26662936,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,14614507,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,DOI: 10.1111/j.1438-8677.1996.tb00577.x,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,Experimental,25855820,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,SUC2,AT1G22710,,,,Experimental,31197803,Cell-Marker gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,ABCG14,AT1G31770,,,,Experimental,24112720,Cell-Marker gene,ATP-binding cassette 14
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,BRX,AT1G31880,,,,Experimental,23569225,Cell-Marker gene,DZC (Disease resistance/zinc finger/chromosome condensation-like region) domain containing protein
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,BRX,AT1G31880,,,,Experimental,25813544,Cell-Marker gene,DZC (Disease resistance/zinc finger/chromosome condensation-like region) domain containing protein
+Arabidopsis_thaliana,vascular system,PO0000034,xylem fiber cell,PO0000274,,NAC012,AT1G32770,,,,Experimental,17114348,Cell-Marker gene,NAC domain containing protein 12
+Arabidopsis_thaliana,vascular system,PO0000034,portion of vascular tissue,PO0009015,,ATHB-15,AT1G52150,,,,Experimental,15705957,Cell-Marker gene,Homeobox-leucine zipper family protein / lipid-binding START domain-containing protein
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,VND7,AT1G71930,,,,Experimental,32327537,Cell-Marker gene,vascular related NAC-domain protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,VND7,AT1G71930,,,,Experimental,33088194,Cell-Marker gene,vascular related NAC-domain protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,VND7,AT1G71930,,,,Experimental,33088194,Cell-Marker gene,vascular related NAC-domain protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,VND7,AT1G71930,,,,Experimental,31881731,Cell-Marker gene,vascular related NAC-domain protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,VND7,AT1G71930,,,,Experimental,31881731,Cell-Marker gene,vascular related NAC-domain protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,VND7,AT1G71930,,,,Experimental,DOI: 10.1101/gad.1331305,Cell-Marker gene,vascular related NAC-domain protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,primary xylem,PO0005849,,CAD1,AT1G72680,,,,Experimental,16832689,Cell-Marker gene,cinnamyl-alcohol dehydrogenase
+Arabidopsis_thaliana,vascular system,PO0000034,xylem fiber cell,PO0000274,,TBL31,AT1G73140,,,,Experimental,26556650,Cell-Marker gene,trichome birefringence-like protein (DUF828)
+Arabidopsis_thaliana,vascular system,PO0000034,secondary xylem,PO0005848,,TBL31,AT1G73140,,,,Experimental,26556650,Cell-Marker gene,trichome birefringence-like protein (DUF828)
+Arabidopsis_thaliana,vascular system,PO0000034,metaxylem,PO0000372,,TBL31,AT1G73140,,,,Experimental,26561534,Cell-Marker gene,trichome birefringence-like protein (DUF828)
+Arabidopsis_thaliana,vascular system,PO0000034,sieve element,PO0025406,,SUS6,AT1G73370,,,,Experimental,31805187,Cell-Marker gene,sucrose synthase 6
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,APL,AT1G79430,,,,Experimental,26239308,Cell-Marker gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,APL,AT1G79430,,,,Experimental,14614507,Cell-Marker gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,APL,AT1G79430,,,,Experimental,DOI: 10.1073/pnas.1719455115,Cell-Marker gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,APL,AT1G79430,,,,Experimental,14614507,Cell-Marker gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,tracheary element,PO0000290,,EXGT-A3,AT2G01850,,,,Experimental,15860011,Cell-Marker gene,endoxyloglucan transferase A3
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,GATA20,AT2G18380,,,,Experimental,26662936,Cell-Marker gene,GATA transcription factor 20
+Arabidopsis_thaliana,vascular system,PO0000034,tracheary element,PO0000290,,WRKY15,AT2G23320,,,,Experimental,32327537,Cell-Marker gene,WRKY DNA-binding protein 15
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,AT2G23950,AT2G23950,,,,Experimental,29789310,Cell-Marker gene,Leucine-rich repeat protein kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,FRA8,AT2G28110,,,,Experimental,16272433,Cell-Marker gene,Exostosin family protein
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,DOF2.4,AT2G37590,,,,Experimental,30626969,Cell-Marker gene,DNA binding with one finger 2.4
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,AUX1,AT2G38120,,,,Experimental,23577185,Cell-Marker gene,Transmembrane amino acid transporter family protein
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,AUX1,AT2G38120,,,,Experimental,11641271,Cell-Marker gene,Transmembrane amino acid transporter family protein
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,AUX1,AT2G38120,,,,Experimental,11910006,Cell-Marker gene,Transmembrane amino acid transporter family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,DAR2,AT2G39830,,,,Experimental,21749503,Cell-Marker gene,DA1-related protein 2
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,AT2G43120,AT2G43120,,,,Experimental,31625609,Cell-Marker gene,RmlC-like cupins superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,sieve tube element,PO0000289,,SEOa,AT3G01670,,,,Experimental,23840197,Cell-Marker gene,sieve element occlusion protein
+Arabidopsis_thaliana,vascular system,PO0000034,sieve tube element,PO0000289,,SEOR1,AT3G01680,,,,Experimental,23840197,Cell-Marker gene,sieve element occlusion amino-terminus protein
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,OPS,AT3G09070,,,,Experimental,26387715,Cell-Marker gene,"LOW protein: UPF0503-like protein, putative (DUF740)"
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,OPS,AT3G09070,,,,Experimental,25813544,Cell-Marker gene,"LOW protein: UPF0503-like protein, putative (DUF740)"
+Arabidopsis_thaliana,vascular system,PO0000034,shoot system vascular system,PO0025205,,BRL3,AT3G13380,,,,Experimental,24064770,Cell-Marker gene,BRI1-like 3
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,AT3G14170,AT3G14170,,,,Experimental,29133465,Cell-Marker gene,hypothetical protein (DUF936)
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,BHLH32,AT3G25710,,,,Experimental,26662936,Cell-Marker gene,basic helix-loop-helix 32
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,BHLH32,AT3G25710,,,,Experimental,DOI: 10.1073/pnas.0510607103,Cell-Marker gene,basic helix-loop-helix 32
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,BHLH32,AT3G25710,,,,Experimental,DOI: 10.1073/pnas.0510607103,Cell-Marker gene,basic helix-loop-helix 32
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUS4,AT3G43190,,,,Experimental,31805187,Cell-Marker gene,sucrose synthase 4
+Arabidopsis_thaliana,vascular system,PO0000034,sieve element,PO0025406,,PIP1A,AT3G61430,,,,Experimental,15898953,Cell-Marker gene,plasma membrane intrinsic protein 1A
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,HB-12,AT3G61890,,,,Experimental,16081527,Cell-Marker gene,homeobox 12
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,AO1,AT4G14940,,,,Experimental,26241131,Cell-Marker gene,amine oxidase 1
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,ABCG9,AT4G27420,,,,Experimental,24112720,Cell-Marker gene,ABC-2 type transporter family protein
+Arabidopsis_thaliana,vascular system,PO0000034,shoot system vascular system,PO0025205,,HB-8,AT4G32880,,,,Experimental,26662936,Cell-Marker gene,homeobox-leucine zipper protein ATHB-8
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,HB-8,AT4G32880,,,,Experimental,30626967,Cell-Marker gene,homeobox-leucine zipper protein ATHB-8
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,HB-8,AT4G32880,,,,Experimental,11402194,Cell-Marker gene,homeobox-leucine zipper protein ATHB-8
+Arabidopsis_thaliana,vascular system,PO0000034,xylem fiber cell,PO0000274,,TBL3,AT5G01360,,,,Experimental,26556650,Cell-Marker gene,trichome birefringence-like protein (DUF828)
+Arabidopsis_thaliana,vascular system,PO0000034,secondary xylem,PO0005848,,TBL3,AT5G01360,,,,Experimental,26556650,Cell-Marker gene,trichome birefringence-like protein (DUF828)
+Arabidopsis_thaliana,vascular system,PO0000034,metaxylem,PO0000372,,TBL3,AT5G01360,,,,Experimental,26556650,Cell-Marker gene,trichome birefringence-like protein (DUF828)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,FTIP1,AT5G06850,,,,Experimental,26239308,Cell-Marker gene,C2 calcium/lipid-binding plant phosphoribosyltransferase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,sieve element,PO0025406,,FTIP1,AT5G06850,,,,Experimental,26239308,Cell-Marker gene,C2 calcium/lipid-binding plant phosphoribosyltransferase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,protoxylem,PO0000272,,MYB46,AT5G12870,,,,Experimental,26662936,Cell-Marker gene,myb domain protein 46
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,MYB46,AT5G12870,,,,Experimental,DOI: 10.1073/pnas.0510607103,Cell-Marker gene,myb domain protein 46
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,AT5G14510,AT5G14510,,,,Experimental,30466575,Cell-Marker gene,ARM repeat superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,phloem,PO0005417,,AT5G14510,AT5G14510,,,,Experimental,30466575,Cell-Marker gene,ARM repeat superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,ACL5,AT5G19530,,,,Experimental,18599510,Cell-Marker gene,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUS1,AT5G20830,,,,Experimental,31805187,Cell-Marker gene,sucrose synthase 1
+Arabidopsis_thaliana,vascular system,PO0000034,sieve element,PO0025406,,SUS5,AT5G37180,,,,Experimental,31805187,Cell-Marker gene,sucrose synthase 5
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,RAC2,AT5G45970,,,,Experimental,16061508,Cell-Marker gene,RAC-like 2
+Arabidopsis_thaliana,vascular system,PO0000034,protophloem,PO0006077,,TMO6,AT5G60200,,,,Experimental,31806676,Cell-Marker gene,TARGET OF MONOPTEROS 6
+Arabidopsis_thaliana,vascular system,PO0000034,sieve element,PO0025406,,TMO6,AT5G60200,,,,Experimental,31806676,Cell-Marker gene,TARGET OF MONOPTEROS 6
+Arabidopsis_thaliana,vascular system,PO0000034,metaxylem,PO0000372,,NAC101,AT5G62380,,,,Experimental,31660587,Cell-Marker gene,NAC-domain protein 101
+Arabidopsis_thaliana,vascular system,PO0000034,xylem vessel,PO0025417,,NAC101,AT5G62380,,,,Experimental,31660587,Cell-Marker gene,NAC-domain protein 101
+Arabidopsis_thaliana,vascular system,PO0000034,metaxylem,PO0000372,,NAC101,AT5G62380,,,,Experimental,16103214,Cell-Marker gene,NAC-domain protein 101
+Arabidopsis_thaliana,vascular system,PO0000034,xylem,PO0005352,,XND1,AT5G64530,,,,Experimental,18069942,Cell-Marker gene,xylem NAC domain 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G23130,AT1G23130,,,,scRNA-seq,33955487,Differentially expressed gene,Polyketide cyclase/dehydrase and lipid transport superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G67865,AT1G67865,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G64370,AT1G64370,,,,scRNA-seq,33955487,Differentially expressed gene,filaggrin-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PP2-A1,AT4G19840,,,,scRNA-seq,33955487,Differentially expressed gene,phloem protein 2-A1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RL4,AT2G18328,,,,scRNA-seq,33955487,Differentially expressed gene,RAD-like 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G18600,AT5G18600,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G67860,AT1G67860,,,,scRNA-seq,33955487,Differentially expressed gene,transmembrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G67870,AT1G67870,,,,scRNA-seq,33955487,Differentially expressed gene,glycine-rich protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G45350,AT5G45350,,,,scRNA-seq,33955487,Differentially expressed gene,proline-rich family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G64360,AT1G64360,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G32870,AT2G32870,,,,scRNA-seq,33955487,Differentially expressed gene,TRAF-like family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AAP2,AT5G09220,,,,scRNA-seq,33955487,Differentially expressed gene,amino acid permease 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G04080,AT5G04080,,,,scRNA-seq,33955487,Differentially expressed gene,cysteine-rich TM module stress tolerance protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G22090,AT5G22090,,,,scRNA-seq,33955487,Differentially expressed gene,FAF-like protein (DUF3049)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G00780,AT4G00780,,,,scRNA-seq,33955487,Differentially expressed gene,TRAF-like family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MT1C,AT1G07610,,,,scRNA-seq,33955487,Differentially expressed gene,metallothionein 1C
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G16008,AT4G16008,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G06830,AT1G06830,,,,scRNA-seq,33955487,Differentially expressed gene,Glutaredoxin family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UBC29,AT2G16740,,,,scRNA-seq,33955487,Differentially expressed gene,ubiquitin-conjugating enzyme 29
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MEE3,AT2G21650,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G30540,AT2G30540,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G16000,AT4G16000,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G47395,AT1G47395,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G15690,AT4G15690,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MC3,AT5G64240,,,,scRNA-seq,33955487,Differentially expressed gene,metacaspase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G47400,AT1G47400,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G47880,AT2G47880,,,,scRNA-seq,33955487,Differentially expressed gene,Glutaredoxin family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HA3,AT5G57350,,,,scRNA-seq,33955487,Differentially expressed gene,H[+]-ATPase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G72800,AT1G72800,,,,scRNA-seq,33955487,Differentially expressed gene,RNA-binding (RRM/RBD/RNP motifs) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AMY2,AT1G76130,,,,scRNA-seq,33955487,Differentially expressed gene,alpha-amylase-like 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GRP7,AT2G21660,,,,scRNA-seq,33955487,Differentially expressed gene,"cold, circadian rhythm, and rna binding 2"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G15700,AT4G15700,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G61210,AT3G61210,,,,scRNA-seq,33955487,Differentially expressed gene,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G62950,AT3G62950,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G32880,AT2G32880,,,,scRNA-seq,33955487,Differentially expressed gene,TRAF-like family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUC2,AT1G22710,,,,scRNA-seq,33955487,Differentially expressed gene,sucrose-proton symporter 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G24575,AT1G24575,,,,scRNA-seq,33955487,Differentially expressed gene,DEAD-box ATP-dependent RNA helicase-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G15950,AT5G15950,,,,scRNA-seq,33955487,Differentially expressed gene,Adenosylmethionine decarboxylase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G20500,AT2G20500,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TLL1,AT1G45201,,,,scRNA-seq,33955487,Differentially expressed gene,triacylglycerol lipase-like 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G54660,AT5G54660,,,,scRNA-seq,33955487,Differentially expressed gene,HSP20-like chaperones superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G14020,AT4G14020,,,,scRNA-seq,33955487,Differentially expressed gene,Rapid alkalinization factor (RALF) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G15680,AT4G15680,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RL6,AT1G75250,,,,scRNA-seq,33955487,Differentially expressed gene,RAD-like 6
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SPL4,AT1G53160,,,,scRNA-seq,33955487,Differentially expressed gene,squamosa promoter binding protein-like 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G03270,AT3G03270,,,,scRNA-seq,33955487,Differentially expressed gene,Adenine nucleotide alpha hydrolases-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G17650,AT5G17650,,,,scRNA-seq,33955487,Differentially expressed gene,glycine/proline-rich protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NAKR1,AT5G02600,,,,scRNA-seq,33955487,Differentially expressed gene,Heavy metal transport/detoxification superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RL3,AT4G36570,,,,scRNA-seq,33955487,Differentially expressed gene,RAD-like 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,APL,AT1G79430,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AAP4,AT5G63850,,,,scRNA-seq,33955487,Differentially expressed gene,amino acid permease 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G15660,AT4G15660,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RL5,AT1G19510,,,,scRNA-seq,33955487,Differentially expressed gene,RAD-like 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G21460,AT3G21460,,,,scRNA-seq,33955487,Differentially expressed gene,Glutaredoxin family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G03020,AT1G03020,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NAS3,AT1G09240,,,,scRNA-seq,33955487,Differentially expressed gene,nicotianamine synthase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G00880,AT4G00880,,,,scRNA-seq,33955487,Differentially expressed gene,SAUR-like auxin-responsive protein family
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G15670,AT4G15670,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WRKY17,AT2G24570,,,,scRNA-seq,33955487,Differentially expressed gene,WRKY DNA-binding protein 17
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G00940,AT4G00940,,,,scRNA-seq,33955487,Differentially expressed gene,Dof-type zinc finger DNA-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NUDT12,AT1G12880,,,,scRNA-seq,33955487,Differentially expressed gene,nudix hydrolase homolog 12
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CCH,AT3G56240,,,,scRNA-seq,33955487,Differentially expressed gene,copper chaperone
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G48750,AT1G48750,,,,scRNA-seq,33955487,Differentially expressed gene,Bifunctional inhibitor/lipid-transfer protein/seed storage 2S albumin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G51340,AT1G51340,,,,scRNA-seq,33955487,Differentially expressed gene,MATE efflux family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HVA22E,AT5G50720,,,,scRNA-seq,33955487,Differentially expressed gene,HVA22 homologue E
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G62930,AT3G62930,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G46871,AT5G46871,,,,scRNA-seq,33955487,Differentially expressed gene,Putative membrane lipoprotein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MIPS3,AT5G10170,,,,scRNA-seq,33955487,Differentially expressed gene,myo-inositol-1-phosphate synthase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,IPT3,AT3G63110,,,,scRNA-seq,33955487,Differentially expressed gene,isopentenyltransferase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MYR1,AT5G18240,,,,scRNA-seq,33955487,Differentially expressed gene,myb-related protein 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NAS4,AT1G56430,,,,scRNA-seq,33955487,Differentially expressed gene,nicotianamine synthase 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SAG21,AT4G02380,,,,scRNA-seq,33955487,Differentially expressed gene,senescence-associated gene 21
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G27690,AT5G27690,,,,scRNA-seq,33955487,Differentially expressed gene,Heavy metal transport/detoxification superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SIM,AT5G04470,,,,scRNA-seq,33955487,Differentially expressed gene,cyclin-dependent protein kinase inhibitor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G20560,AT2G20560,,,,scRNA-seq,33955487,Differentially expressed gene,DNAJ heat shock family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G37180,AT4G37180,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G55646,AT3G55646,,,,scRNA-seq,33955487,Differentially expressed gene,TPRXL
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G14560,AT3G14560,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G73630,AT1G73630,,,,scRNA-seq,33955487,Differentially expressed gene,EF hand calcium-binding protein family
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,BHLH100,AT2G41240,,,,scRNA-seq,33955487,Differentially expressed gene,basic helix-loop-helix protein 100
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G01600,AT4G01600,,,,scRNA-seq,33955487,Differentially expressed gene,GRAM domain family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G32870,AT4G32870,,,,scRNA-seq,33955487,Differentially expressed gene,Polyketide cyclase/dehydrase and lipid transport superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G36010,AT4G36010,,,,scRNA-seq,33955487,Differentially expressed gene,Pathogenesis-related thaumatin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G25570,AT3G25570,,,,scRNA-seq,33955487,Differentially expressed gene,Adenosylmethionine decarboxylase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AHP1,AT3G21510,,,,scRNA-seq,33955487,Differentially expressed gene,histidine-containing phosphotransmitter 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,OBP2,AT1G07640,,,,scRNA-seq,33955487,Differentially expressed gene,Dof-type zinc finger DNA-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WIH1,AT5G67600,,,,scRNA-seq,33955487,Differentially expressed gene,cysteine-rich TM module stress tolerance protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G19715,AT1G19715,,,,scRNA-seq,33955487,Differentially expressed gene,Mannose-binding lectin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,QS,AT5G50210,,,,scRNA-seq,33955487,Differentially expressed gene,quinolinate synthase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ARFB1A,AT2G15310,,,,scRNA-seq,33955487,Differentially expressed gene,ADP-ribosylation factor B1A
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PAP1,AT3G16500,,,,scRNA-seq,33955487,Differentially expressed gene,phytochrome-associated protein 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G32210,AT2G32210,,,,scRNA-seq,33955487,Differentially expressed gene,cysteine-rich/transmembrane domain A-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GRP2B,AT2G21060,,,,scRNA-seq,33955487,Differentially expressed gene,glycine-rich protein 2B
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G12110,AT5G12110,,,,scRNA-seq,33955487,Differentially expressed gene,elongation factor 1-beta 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PHL1,AT5G29000,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TPPJ,AT5G65140,,,,scRNA-seq,33955487,Differentially expressed gene,Haloacid dehalogenase-like hydrolase (HAD) superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PAP10,AT2G16430,,,,scRNA-seq,33955487,Differentially expressed gene,purple acid phosphatase 10
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NF-YC2,AT1G56170,,,,scRNA-seq,33955487,Differentially expressed gene,"nuclear factor Y, subunit C2"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NRAMP6,AT1G15960,,,,scRNA-seq,33955487,Differentially expressed gene,NRAMP metal ion transporter 6
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,DOF2,AT3G21270,,,,scRNA-seq,33955487,Differentially expressed gene,DOF zinc finger protein 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G66080,AT1G66080,,,,scRNA-seq,33955487,Differentially expressed gene,hikeshi-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G28810,AT2G28810,,,,scRNA-seq,33955487,Differentially expressed gene,Dof-type zinc finger DNA-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G01390,AT1G01390,,,,scRNA-seq,33955487,Differentially expressed gene,UDP-Glycosyltransferase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PPC3,AT3G14940,,,,scRNA-seq,33955487,Differentially expressed gene,phosphoenolpyruvate carboxylase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,KAT1,AT5G46240,,,,scRNA-seq,33955487,Differentially expressed gene,1.0
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G59860,AT1G59860,,,,scRNA-seq,33955487,Differentially expressed gene,HSP20-like chaperones superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G25450,AT5G25450,,,,scRNA-seq,33955487,Differentially expressed gene,"Cytochrome bd ubiquinol oxidase, 14kDa subunit"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G02940,AT4G02940,,,,scRNA-seq,33955487,Differentially expressed gene,"oxidoreductase, 2OG-Fe(II) oxygenase family protein"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ADF5,AT2G16700,,,,scRNA-seq,33955487,Differentially expressed gene,actin depolymerizing factor 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUS1,AT5G20830,,,,scRNA-seq,33955487,Differentially expressed gene,sucrose synthase 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AGP10,AT4G09030,,,,scRNA-seq,33955487,Differentially expressed gene,arabinogalactan protein 10
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,VOZ1,AT1G28520,,,,scRNA-seq,33955487,Differentially expressed gene,vascular plant one zinc finger protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ADC2,AT4G34710,,,,scRNA-seq,33955487,Differentially expressed gene,arginine decarboxylase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G12730,AT3G12730,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GPT1,AT5G54800,,,,scRNA-seq,33955487,Differentially expressed gene,glucose 6-phosphate/phosphate translocator 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NRAMP1,AT1G80830,,,,scRNA-seq,33955487,Differentially expressed gene,natural resistance-associated macrophage protein 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NAPRT1,AT4G36940,,,,scRNA-seq,33955487,Differentially expressed gene,nicotinate phosphoribosyltransferase 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G35780,AT1G35780,,,,scRNA-seq,33955487,Differentially expressed gene,N-lysine methyltransferase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G02970,AT5G02970,,,,scRNA-seq,33955487,Differentially expressed gene,alpha/beta-Hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G40960,AT5G40960,,,,scRNA-seq,33955487,Differentially expressed gene,"transmembrane protein, putative (DUF 3339)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G05365,AT5G05365,,,,scRNA-seq,33955487,Differentially expressed gene,Heavy metal transport/detoxification superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PROPEP5,AT5G09990,,,,scRNA-seq,33955487,Differentially expressed gene,elicitor peptide 5 precursor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G16790,AT4G16790,,,,scRNA-seq,33955487,Differentially expressed gene,hydroxyproline-rich glycoprotein family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,IDH2,AT2G17130,,,,scRNA-seq,33955487,Differentially expressed gene,isocitrate dehydrogenase subunit 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,JMT,AT1G19640,,,,scRNA-seq,33955487,Differentially expressed gene,jasmonic acid carboxyl methyltransferase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G69570,AT1G69570,,,,scRNA-seq,33955487,Differentially expressed gene,Dof-type zinc finger DNA-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,Mik,AT5G58730,,,,scRNA-seq,33955487,Differentially expressed gene,pfkB-like carbohydrate kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TDR1,AT3G23230,,,,scRNA-seq,33955487,Differentially expressed gene,Integrase-type DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,YAB5,AT2G26580,,,,scRNA-seq,33955487,Differentially expressed gene,plant-specific transcription factor YABBY family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G54575,AT1G54575,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NIP6;1,AT1G80760,,,,scRNA-seq,33955487,Differentially expressed gene,NOD26-like intrinsic protein 6;1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WRKY27,AT5G52830,,,,scRNA-seq,33955487,Differentially expressed gene,WRKY DNA-binding protein 27
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MEE55,AT4G13345,,,,scRNA-seq,33955487,Differentially expressed gene,Serinc-domain containing serine and sphingolipid biosynthesis protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AAP5,AT1G44100,,,,scRNA-seq,33955487,Differentially expressed gene,amino acid permease 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CML30,AT2G15680,,,,scRNA-seq,33955487,Differentially expressed gene,Calcium-binding EF-hand family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TET6,AT3G12090,,,,scRNA-seq,33955487,Differentially expressed gene,tetraspanin6
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ROXY2,AT5G14070,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G52810,AT5G52810,,,,scRNA-seq,33955487,Differentially expressed gene,NAD(P)-binding Rossmann-fold superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CLE26,AT1G69970,,,,scRNA-seq,33955487,Differentially expressed gene,CLAVATA3/ESR-RELATED 26
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,FER1,AT5G01600,,,,scRNA-seq,33955487,Differentially expressed gene,ferretin 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UGT73B5,AT2G15480,,,,scRNA-seq,33955487,Differentially expressed gene,UDP-glucosyl transferase 73B5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PP2-A10,AT1G10155,,,,scRNA-seq,33955487,Differentially expressed gene,phloem protein 2-A10
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,KIN1,AT5G15960,,,,scRNA-seq,33955487,Differentially expressed gene,stress-responsive protein (KIN1) / stress-induced protein (KIN1)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,bHLH34,AT3G23210,,,,scRNA-seq,33955487,Differentially expressed gene,basic helix-loop-helix (bHLH) DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,IAA11,AT4G28640,,,,scRNA-seq,33955487,Differentially expressed gene,indole-3-acetic acid inducible 11
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G04170,AT2G04170,,,,scRNA-seq,33955487,Differentially expressed gene,TRAF-like family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,XIP1,AT5G49660,,,,scRNA-seq,33955487,Differentially expressed gene,Leucine-rich repeat transmembrane protein kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G10380,AT1G10380,,,,scRNA-seq,33955487,Differentially expressed gene,Putative membrane lipoprotein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G43270,AT3G43270,,,,scRNA-seq,33955487,Differentially expressed gene,Plant invertase/pectin methylesterase inhibitor superfamily
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G36330,AT2G36330,,,,scRNA-seq,33955487,Differentially expressed gene,Uncharacterized protein family (UPF0497)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,FMO GS-OX4,AT1G62570,,,,scRNA-seq,33955487,Differentially expressed gene,flavin-monooxygenase glucosinolate S-oxygenase 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G01960,AT3G01960,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G58720,AT3G58720,,,,scRNA-seq,33955487,Differentially expressed gene,RING/U-box superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G53590,AT5G53590,,,,scRNA-seq,33955487,Differentially expressed gene,SAUR-like auxin-responsive protein family
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TOPP6,AT5G43380,,,,scRNA-seq,33955487,Differentially expressed gene,type one serine/threonine protein phosphatase 6
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ACO2,AT4G26970,,,,scRNA-seq,33955487,Differentially expressed gene,aconitase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G31390,AT2G31390,,,,scRNA-seq,33955487,Differentially expressed gene,pfkB-like carbohydrate kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G16450,AT5G16450,,,,scRNA-seq,33955487,Differentially expressed gene,Ribonuclease E inhibitor RraA/Dimethylmenaquinone methyltransferase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G46630,AT2G46630,,,,scRNA-seq,33955487,Differentially expressed gene,serine/arginine repetitive matrix protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G65150,AT1G65150,,,,scRNA-seq,33955487,Differentially expressed gene,TRAF-like family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PDLP8,AT3G60720,,,,scRNA-seq,33955487,Differentially expressed gene,plasmodesmata-located protein 8
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G04980,AT5G04980,,,,scRNA-seq,33955487,Differentially expressed gene,DNAse I-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G51440,AT5G51440,,,,scRNA-seq,33955487,Differentially expressed gene,HSP20-like chaperones superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PMAT2,AT3G29670,,,,scRNA-seq,33955487,Differentially expressed gene,HXXXD-type acyl-transferase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G03500,AT2G03500,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UBC17,AT4G36410,,,,scRNA-seq,33955487,Differentially expressed gene,ubiquitin-conjugating enzyme 17
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G58900,AT5G58900,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like transcriptional regulator
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,EXPA9,AT5G02260,,,,scRNA-seq,33955487,Differentially expressed gene,expansin A9
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G16050,AT2G16050,,,,scRNA-seq,33955487,Differentially expressed gene,Cysteine/Histidine-rich C1 domain family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G39850,AT2G39850,,,,scRNA-seq,33955487,Differentially expressed gene,Subtilisin-like serine endopeptidase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RSW10,AT1G71100,,,,scRNA-seq,33955487,Differentially expressed gene,"Ribose 5-phosphate isomerase, type A protein"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HAM4,AT4G36710,,,,scRNA-seq,33955487,Differentially expressed gene,GRAS family transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PFK5,AT2G22480,,,,scRNA-seq,33955487,Differentially expressed gene,phosphofructokinase 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NFXL1,AT1G10170,,,,scRNA-seq,33955487,Differentially expressed gene,NF-X-like 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G42146,AT5G42146,,,,scRNA-seq,33955487,Differentially expressed gene,transmembrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TGA1,AT5G65210,,,,scRNA-seq,33955487,Differentially expressed gene,bZIP transcription factor family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G27435,AT4G27435,,,,scRNA-seq,33955487,Differentially expressed gene,fiber (DUF1218)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ASG1,AT2G24100,,,,scRNA-seq,33955487,Differentially expressed gene,ATP-dependent DNA helicase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TIN1,AT5G64510,,,,scRNA-seq,33955487,Differentially expressed gene,tunicamycin induced protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MT1B,AT5G56795,,,,scRNA-seq,33955487,Differentially expressed gene,metallothionein 1B
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GDH3,AT3G03910,,,,scRNA-seq,33955487,Differentially expressed gene,glutamate dehydrogenase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G33080,AT1G33080,,,,scRNA-seq,33955487,Differentially expressed gene,MATE efflux family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,EMB2770,AT4G03430,,,,scRNA-seq,33955487,Differentially expressed gene,pre-mRNA splicing factor-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,BIM1,AT5G08130,,,,scRNA-seq,33955487,Differentially expressed gene,basic helix-loop-helix (bHLH) DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TPS1,AT1G78580,,,,scRNA-seq,33955487,Differentially expressed gene,trehalose-6-phosphate synthase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SCL8,AT5G52510,,,,scRNA-seq,33955487,Differentially expressed gene,SCARECROW-like 8
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G14500,AT5G14500,,,,scRNA-seq,33955487,Differentially expressed gene,aldose 1-epimerase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SPL3,AT2G33810,,,,scRNA-seq,33955487,Differentially expressed gene,squamosa promoter binding protein-like 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G05790,AT5G05790,,,,scRNA-seq,33955487,Differentially expressed gene,Duplicated homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G22850,AT3G22850,,,,scRNA-seq,33955487,Differentially expressed gene,aluminum induced protein with YGL and LRDR motifs
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TCP5,AT5G60970,,,,scRNA-seq,33955487,Differentially expressed gene,"TEOSINTE BRANCHED 1, cycloidea and PCF transcription factor 5"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PDC2,AT5G54960,,,,scRNA-seq,33955487,Differentially expressed gene,pyruvate decarboxylase-2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HIPP21,AT5G17450,,,,scRNA-seq,33955487,Differentially expressed gene,Heavy metal transport/detoxification superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CLE41,AT3G24770,,,,scRNA-seq,33955487,Differentially expressed gene,CLAVATA3/ESR-RELATED 41
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,EHB1,AT1G70800,,,,scRNA-seq,33955487,Differentially expressed gene,Calcium-dependent lipid-binding (CaLB domain) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CIPK4,AT4G14580,,,,scRNA-seq,33955487,Differentially expressed gene,CBL-interacting protein kinase 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G22160,AT4G22160,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WNK8,AT5G41990,,,,scRNA-seq,33955487,Differentially expressed gene,with no lysine (K) kinase 8
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,,AT1G07367,,,,scRNA-seq,33955487,Differentially expressed gene,
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,INT4,AT4G16480,,,,scRNA-seq,33955487,Differentially expressed gene,inositol transporter 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,,AT5G64687,,,,scRNA-seq,33955487,Differentially expressed gene,
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G47050,AT5G47050,,,,scRNA-seq,33955487,Differentially expressed gene,SBP (S-ribonuclease binding protein) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G49220,AT3G49220,,,,scRNA-seq,33955487,Differentially expressed gene,Plant invertase/pectin methylesterase inhibitor superfamily
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NUDX25,AT1G30110,,,,scRNA-seq,33955487,Differentially expressed gene,nudix hydrolase homolog 25
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G19900,AT5G19900,,,,scRNA-seq,33955487,Differentially expressed gene,PRLI-interacting factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G47060,AT5G47060,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein (DUF581)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WRKY7,AT4G24240,,,,scRNA-seq,33955487,Differentially expressed gene,WRKY DNA-binding protein 7
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GLB3,AT4G32690,,,,scRNA-seq,33955487,Differentially expressed gene,hemoglobin 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SGP1,AT5G54840,,,,scRNA-seq,33955487,Differentially expressed gene,Ras-related small GTP-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G46880,AT3G46880,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G33340,AT1G33340,,,,scRNA-seq,33955487,Differentially expressed gene,ENTH/ANTH/VHS superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G10830,AT5G10830,,,,scRNA-seq,33955487,Differentially expressed gene,S-adenosyl-L-methionine-dependent methyltransferases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G50910,AT3G50910,,,,scRNA-seq,33955487,Differentially expressed gene,netrin receptor DCC
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ACR8,AT1G12420,,,,scRNA-seq,33955487,Differentially expressed gene,ACT domain repeat 8
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MIF1,AT1G74660,,,,scRNA-seq,33955487,Differentially expressed gene,mini zinc finger 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PHO1;H1,AT1G68740,,,,scRNA-seq,33955487,Differentially expressed gene,EXS (ERD1/XPR1/SYG1) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,bHLH38,AT3G56970,,,,scRNA-seq,33955487,Differentially expressed gene,basic helix-loop-helix (bHLH) DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PFA-DSP1,AT1G05000,,,,scRNA-seq,33955487,Differentially expressed gene,Phosphotyrosine protein phosphatases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G53690,AT1G53690,,,,scRNA-seq,33955487,Differentially expressed gene,"DNA directed RNA polymerase, 7 kDa subunit"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NDB2,AT4G05020,,,,scRNA-seq,33955487,Differentially expressed gene,NAD(P)H dehydrogenase B2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,4CL5,AT3G21230,,,,scRNA-seq,33955487,Differentially expressed gene,4-coumarate:CoA ligase 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,IPK2BETA,AT5G61760,,,,scRNA-seq,33955487,Differentially expressed gene,inositol polyphosphate kinase 2 beta
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,TRA2,AT5G13420,,,,scRNA-seq,33955487,Differentially expressed gene,Aldolase-type TIM barrel family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,APRR2,AT4G18020,,,,scRNA-seq,33955487,Differentially expressed gene,CheY-like two-component responsive regulator family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G48480,AT5G48480,,,,scRNA-seq,33955487,Differentially expressed gene,Lactoylglutathione lyase / glyoxalase I family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G07300,AT1G07300,,,,scRNA-seq,33955487,Differentially expressed gene,josephin protein-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NDL3,AT2G19620,,,,scRNA-seq,33955487,Differentially expressed gene,N-MYC downregulated-like 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G03495,AT5G03495,,,,scRNA-seq,33955487,Differentially expressed gene,RNA-binding (RRM/RBD/RNP motifs) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RANBP1,AT5G58590,,,,scRNA-seq,33955487,Differentially expressed gene,RAN binding protein 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G50890,AT5G50890,,,,scRNA-seq,33955487,Differentially expressed gene,alpha/beta-Hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HK1,AT2G17820,,,,scRNA-seq,33955487,Differentially expressed gene,histidine kinase 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G31750,AT1G31750,,,,scRNA-seq,33955487,Differentially expressed gene,proline-rich family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,FTIP1,AT5G06850,,,,scRNA-seq,33955487,Differentially expressed gene,C2 calcium/lipid-binding plant phosphoribosyltransferase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,,AT1G67365,,,,scRNA-seq,33955487,Differentially expressed gene,
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RFNR1,AT4G05390,,,,scRNA-seq,33955487,Differentially expressed gene,root FNR 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,BHLH101,AT5G04150,,,,scRNA-seq,33955487,Differentially expressed gene,basic helix-loop-helix (bHLH) DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G59740,AT1G59740,,,,scRNA-seq,33955487,Differentially expressed gene,Major facilitator superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,mSFC1,AT5G01340,,,,scRNA-seq,33955487,Differentially expressed gene,Mitochondrial substrate carrier family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PPa4,AT3G53620,,,,scRNA-seq,33955487,Differentially expressed gene,pyrophosphorylase 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G21130,AT2G21130,,,,scRNA-seq,33955487,Differentially expressed gene,Cyclophilin-like peptidyl-prolyl cis-trans isomerase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G20562,AT2G20562,,,,scRNA-seq,33955487,Differentially expressed gene,taximin
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G24060,AT4G24060,,,,scRNA-seq,33955487,Differentially expressed gene,Dof-type zinc finger DNA-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G23950,AT2G23950,,,,scRNA-seq,33955487,Differentially expressed gene,Leucine-rich repeat protein kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G40690,AT5G40690,,,,scRNA-seq,33955487,Differentially expressed gene,histone-lysine N-methyltransferase trithorax-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G35732,AT5G35732,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PFA-DSP3,AT3G02800,,,,scRNA-seq,33955487,Differentially expressed gene,Tyrosine phosphatase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G28760,AT1G28760,,,,scRNA-seq,33955487,Differentially expressed gene,"guanosine-3',5'-bis (diphosphate) 3'-pyrophosphohydrolase, putative (DUF2215)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GSTU23,AT1G78320,,,,scRNA-seq,33955487,Differentially expressed gene,glutathione S-transferase TAU 23
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G38710,AT5G38710,,,,scRNA-seq,33955487,Differentially expressed gene,Methylenetetrahydrofolate reductase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G62900,AT5G62900,,,,scRNA-seq,33955487,Differentially expressed gene,basic-leucine zipper transcription factor K
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,YSL1,AT4G24120,,,,scRNA-seq,33955487,Differentially expressed gene,YELLOW STRIPE like 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,mMDH2,AT3G15020,,,,scRNA-seq,33955487,Differentially expressed gene,Lactate/malate dehydrogenase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,LOX1,AT1G55020,,,,scRNA-seq,33955487,Differentially expressed gene,lipoxygenase 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G54130,AT5G54130,,,,scRNA-seq,33955487,Differentially expressed gene,Calcium-binding endonuclease/exonuclease/phosphatase family
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,FD3,AT2G27510,,,,scRNA-seq,33955487,Differentially expressed gene,ferredoxin 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UCP5,AT2G22500,,,,scRNA-seq,33955487,Differentially expressed gene,uncoupling protein 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HY5,AT5G11260,,,,scRNA-seq,33955487,Differentially expressed gene,Basic-leucine zipper (bZIP) transcription factor family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G62260,AT3G62260,,,,scRNA-seq,33955487,Differentially expressed gene,Protein phosphatase 2C family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HSFC1,AT3G24520,,,,scRNA-seq,33955487,Differentially expressed gene,heat shock transcription factor C1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GID1A,AT3G05120,,,,scRNA-seq,33955487,Differentially expressed gene,alpha/beta-Hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NUDT2,AT5G47650,,,,scRNA-seq,33955487,Differentially expressed gene,nudix hydrolase homolog 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G13960,AT2G13960,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NEK2,AT3G04810,,,,scRNA-seq,33955487,Differentially expressed gene,NIMA-related kinase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HAM1,AT2G45160,,,,scRNA-seq,33955487,Differentially expressed gene,GRAS family transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G69610,AT1G69610,,,,scRNA-seq,33955487,Differentially expressed gene,"zinc finger FYVE domain protein, putative (DUF1666)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G32860,AT1G32860,,,,scRNA-seq,33955487,Differentially expressed gene,Glycosyl hydrolase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G14990,AT4G14990,,,,scRNA-seq,33955487,Differentially expressed gene,Topoisomerase II-associated protein PAT1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RPL,AT5G02030,,,,scRNA-seq,33955487,Differentially expressed gene,POX (plant homeobox) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PLL4,AT2G28890,,,,scRNA-seq,33955487,Differentially expressed gene,poltergeist like 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CLV1,AT1G75820,,,,scRNA-seq,33955487,Differentially expressed gene,Leucine-rich receptor-like protein kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SUVR4,AT3G04380,,,,scRNA-seq,33955487,Differentially expressed gene,SET-domain containing protein lysine methyltransferase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SWEET4,AT3G28007,,,,scRNA-seq,33955487,Differentially expressed gene,Nodulin MtN3 family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WR3,AT5G50200,,,,scRNA-seq,33955487,Differentially expressed gene,nitrate transmembrane transporter
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G20300,AT4G20300,,,,scRNA-seq,33955487,Differentially expressed gene,"Serine/Threonine-kinase, putative (DUF1639)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MYB112,AT1G48000,,,,scRNA-seq,33955487,Differentially expressed gene,myb domain protein 112
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G13275,AT3G13275,,,,scRNA-seq,33955487,Differentially expressed gene,transmembrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G60520,AT3G60520,,,,scRNA-seq,33955487,Differentially expressed gene,zinc ion-binding protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G27950,AT5G27950,,,,scRNA-seq,33955487,Differentially expressed gene,P-loop containing nucleoside triphosphate hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,YAB2,AT1G08465,,,,scRNA-seq,33955487,Differentially expressed gene,Plant-specific transcription factor YABBY family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G23150,AT1G23150,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HB31,AT1G14440,,,,scRNA-seq,33955487,Differentially expressed gene,homeobox protein 31
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ALS3,AT2G37330,,,,scRNA-seq,33955487,Differentially expressed gene,aluminum sensitive 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G27210,AT3G27210,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,OXS2,AT2G41900,,,,scRNA-seq,33955487,Differentially expressed gene,CCCH-type zinc finger protein with ARM repeat domain-containing protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,BCA3,AT1G23730,,,,scRNA-seq,33955487,Differentially expressed gene,beta carbonic anhydrase 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G55050,AT5G55050,,,,scRNA-seq,33955487,Differentially expressed gene,GDSL-like Lipase/Acylhydrolase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G15990,AT4G15990,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CYP78A6,AT2G46660,,,,scRNA-seq,33955487,Differentially expressed gene,"cytochrome P450, family 78, subfamily A, polypeptide 6"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G06800,AT5G06800,,,,scRNA-seq,33955487,Differentially expressed gene,myb-like HTH transcriptional regulator family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G05632,AT2G05632,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G19370,AT1G19370,,,,scRNA-seq,33955487,Differentially expressed gene,membrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,C/VIF1,AT1G47960,,,,scRNA-seq,33955487,Differentially expressed gene,cell wall / vacuolar inhibitor of fructosidase 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G13030,AT4G13030,,,,scRNA-seq,33955487,Differentially expressed gene,P-loop containing nucleoside triphosphate hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G21640,AT2G21640,,,,scRNA-seq,33955487,Differentially expressed gene,marker for oxidative stress response protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G61113,AT3G61113,,,,scRNA-seq,33955487,Differentially expressed gene,Ubiquitin related modifier 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PUX5,AT4G15410,,,,scRNA-seq,33955487,Differentially expressed gene,serine/threonine protein phosphatase 2A 55 kDa regulatory subunit B prime gamma
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G58980,AT5G58980,,,,scRNA-seq,33955487,Differentially expressed gene,Neutral/alkaline non-lysosomal ceramidase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G12510,AT3G12510,,,,scRNA-seq,33955487,Differentially expressed gene,MADS-box family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G62960,AT3G62960,,,,scRNA-seq,33955487,Differentially expressed gene,Thioredoxin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RTFL2,AT2G29125,,,,scRNA-seq,33955487,Differentially expressed gene,ROTUNDIFOLIA like 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G01940,AT3G01940,,,,scRNA-seq,33955487,Differentially expressed gene,"transmembrane protein, putative (DUF 3339)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G22550,AT3G22550,,,,scRNA-seq,33955487,Differentially expressed gene,"NAD(P)H-quinone oxidoreductase subunit, putative (DUF581)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G62840,AT1G62840,,,,scRNA-seq,33955487,Differentially expressed gene,ankyrin repeat/KH domain protein (DUF1442)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G64140,AT1G64140,,,,scRNA-seq,33955487,Differentially expressed gene,WRKY transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G73040,AT1G73040,,,,scRNA-seq,33955487,Differentially expressed gene,Mannose-binding lectin superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G30240,AT4G30240,,,,scRNA-seq,33955487,Differentially expressed gene,Syntaxin/t-SNARE family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RECQSIM,AT5G27680,,,,scRNA-seq,33955487,Differentially expressed gene,RECQ helicase SIM
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PFK7,AT5G56630,,,,scRNA-seq,33955487,Differentially expressed gene,phosphofructokinase 7
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G30841,AT3G30841,,,,scRNA-seq,33955487,Differentially expressed gene,Cofactor-independent phosphoglycerate mutase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G68160,AT1G68160,,,,scRNA-seq,33955487,Differentially expressed gene,"ZZ-type zinc finger protein, putative (DUF3755)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G54390,AT3G54390,,,,scRNA-seq,33955487,Differentially expressed gene,sequence-specific DNA binding transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SPX1,AT5G20150,,,,scRNA-seq,33955487,Differentially expressed gene,SPX domain-containing protein 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NPR3,AT5G45110,,,,scRNA-seq,33955487,Differentially expressed gene,NPR1-like protein 3
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G51030,AT5G51030,,,,scRNA-seq,33955487,Differentially expressed gene,NAD(P)-binding Rossmann-fold superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G25170,AT5G25170,,,,scRNA-seq,33955487,Differentially expressed gene,PPPDE putative thiol peptidase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WRKY22,AT4G01250,,,,scRNA-seq,33955487,Differentially expressed gene,WRKY family transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WIN2,AT4G31750,,,,scRNA-seq,33955487,Differentially expressed gene,HOPW1-1-interacting 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G56530,AT5G56530,,,,scRNA-seq,33955487,Differentially expressed gene,tRNA-splicing ligase (DUF239)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PTR4,AT2G02020,,,,scRNA-seq,33955487,Differentially expressed gene,Major facilitator superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G16510,AT1G16510,,,,scRNA-seq,33955487,Differentially expressed gene,SAUR-like auxin-responsive protein family
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G18600,AT2G18600,,,,scRNA-seq,33955487,Differentially expressed gene,Ubiquitin-conjugating enzyme family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,RING,AT4G19700,,,,scRNA-seq,33955487,Differentially expressed gene,SBP (S-ribonuclease binding protein) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HAM2,AT3G60630,,,,scRNA-seq,33955487,Differentially expressed gene,GRAS family transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G21910,AT5G21910,,,,scRNA-seq,33955487,Differentially expressed gene,transmembrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT-HSFB2B,AT4G11660,,,,scRNA-seq,33955487,Differentially expressed gene,winged-helix DNA-binding transcription factor family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PP2-B1,AT2G02230,,,,scRNA-seq,33955487,Differentially expressed gene,phloem protein 2-B1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G59910,AT3G59910,,,,scRNA-seq,33955487,Differentially expressed gene,Ankyrin repeat family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G08565,AT5G08565,,,,scRNA-seq,33955487,Differentially expressed gene,Transcription initiation Spt4-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ASE2,AT4G34740,,,,scRNA-seq,33955487,Differentially expressed gene,GLN phosphoribosyl pyrophosphate amidotransferase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ACR6,AT3G01990,,,,scRNA-seq,33955487,Differentially expressed gene,ACT domain repeat 6
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G39780,AT4G39780,,,,scRNA-seq,33955487,Differentially expressed gene,Integrase-type DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PSD2,AT5G57190,,,,scRNA-seq,33955487,Differentially expressed gene,phosphatidylserine decarboxylase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,FAB1C,AT1G71010,,,,scRNA-seq,33955487,Differentially expressed gene,FORMS APLOID AND BINUCLEATE CELLS 1C
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,LEJ2,AT4G36910,,,,scRNA-seq,33955487,Differentially expressed gene,Cystathionine beta-synthase (CBS) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GCL1,AT5G65280,,,,scRNA-seq,33955487,Differentially expressed gene,GCR2-like 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,HB23,AT5G39760,,,,scRNA-seq,33955487,Differentially expressed gene,homeobox protein 23
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,,AT1G29357,,,,scRNA-seq,33955487,Differentially expressed gene,
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G01200,AT5G01200,,,,scRNA-seq,33955487,Differentially expressed gene,Duplicated homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G74510,AT1G74510,,,,scRNA-seq,33955487,Differentially expressed gene,Galactose oxidase/kelch repeat superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ABCC9,AT3G60160,,,,scRNA-seq,33955487,Differentially expressed gene,multidrug resistance-associated protein 9
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ARFB1C,AT3G03120,,,,scRNA-seq,33955487,Differentially expressed gene,ADP-ribosylation factor B1C
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G70505,AT1G70505,,,,scRNA-seq,33955487,Differentially expressed gene,transmembrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SRF1,AT2G20850,,,,scRNA-seq,33955487,Differentially expressed gene,STRUBBELIG-receptor family 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G01610,AT5G01610,,,,scRNA-seq,33955487,Differentially expressed gene,"hypothetical protein (Protein of unknown function, DUF538)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G20920,AT1G20920,,,,scRNA-seq,33955487,Differentially expressed gene,P-loop containing nucleoside triphosphate hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G63710,AT5G63710,,,,scRNA-seq,33955487,Differentially expressed gene,Leucine-rich repeat protein kinase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MTPB1,AT2G29410,,,,scRNA-seq,33955487,Differentially expressed gene,metal tolerance protein B1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GBF6,AT4G34590,,,,scRNA-seq,33955487,Differentially expressed gene,G-box binding factor 6
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G61660,AT1G61660,,,,scRNA-seq,33955487,Differentially expressed gene,basic helix-loop-helix (bHLH) DNA-binding superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G02140,AT4G02140,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,WRKY39,AT3G04670,,,,scRNA-seq,33955487,Differentially expressed gene,WRKY DNA-binding protein 39
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CDS2,AT4G22340,,,,scRNA-seq,33955487,Differentially expressed gene,cytidinediphosphate diacylglycerol synthase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G30470,AT4G30470,,,,scRNA-seq,33955487,Differentially expressed gene,NAD(P)-binding Rossmann-fold superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CRN,AT5G13290,,,,scRNA-seq,33955487,Differentially expressed gene,Protein kinase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UGT78D2,AT5G17050,,,,scRNA-seq,33955487,Differentially expressed gene,UDP-glucosyl transferase 78D2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G10410,AT1G10410,,,,scRNA-seq,33955487,Differentially expressed gene,CW14 protein (DUF1336)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MYR2,AT3G04030,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G67300,AT1G67300,,,,scRNA-seq,33955487,Differentially expressed gene,Major facilitator superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UCN,AT1G51170,,,,scRNA-seq,33955487,Differentially expressed gene,Protein kinase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,UMAMIT11,AT2G40900,,,,scRNA-seq,33955487,Differentially expressed gene,nodulin MtN21 /EamA-like transporter family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G16710,AT4G16710,,,,scRNA-seq,33955487,Differentially expressed gene,glycosyltransferase family protein 28
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G13970,AT5G13970,,,,scRNA-seq,33955487,Differentially expressed gene,midasin-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G80690,AT1G80690,,,,scRNA-seq,33955487,Differentially expressed gene,PPPDE putative thiol peptidase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G42670,AT2G42670,,,,scRNA-seq,33955487,Differentially expressed gene,"2-aminoethanethiol dioxygenase, putative (DUF1637)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,IDH-VI,AT3G09810,,,,scRNA-seq,33955487,Differentially expressed gene,isocitrate dehydrogenase VI
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G45090,AT3G45090,,,,scRNA-seq,33955487,Differentially expressed gene,P-loop containing nucleoside triphosphate hydrolases superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G04840,AT5G04840,,,,scRNA-seq,33955487,Differentially expressed gene,bZIP protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G78110,AT1G78110,,,,scRNA-seq,33955487,Differentially expressed gene,nucleolar GTP-binding protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,DA1,AT1G19270,,,,scRNA-seq,33955487,Differentially expressed gene,DA1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PGM,AT1G78050,,,,scRNA-seq,33955487,Differentially expressed gene,phosphoglycerate/bisphosphoglycerate mutase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G01990,AT2G01990,,,,scRNA-seq,33955487,Differentially expressed gene,XRI1-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G28040,AT5G28040,,,,scRNA-seq,33955487,Differentially expressed gene,DNA-binding storekeeper protein-related transcriptional regulator
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G14870,AT3G14870,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein (DUF641)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G26600,AT2G26600,,,,scRNA-seq,33955487,Differentially expressed gene,Glycosyl hydrolase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SWEET1,AT1G21460,,,,scRNA-seq,33955487,Differentially expressed gene,Nodulin MtN3 family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PHB1,AT4G28510,,,,scRNA-seq,33955487,Differentially expressed gene,prohibitin 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G20080,AT5G20080,,,,scRNA-seq,33955487,Differentially expressed gene,FAD/NAD(P)-binding oxidoreductase
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G07810,AT3G07810,,,,scRNA-seq,33955487,Differentially expressed gene,RNA-binding (RRM/RBD/RNP motifs) family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G62960,AT5G62960,,,,scRNA-seq,33955487,Differentially expressed gene,UDP-N-acetylglucosamine-N-acetylmuramyl-pyrophosphoryl-undecaprenol N-acetylglucosamine protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,MGT9,AT5G64560,,,,scRNA-seq,33955487,Differentially expressed gene,magnesium transporter 9
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G26930,AT1G26930,,,,scRNA-seq,33955487,Differentially expressed gene,Galactose oxidase/kelch repeat superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,BAP2,AT2G45760,,,,scRNA-seq,33955487,Differentially expressed gene,BON association protein 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G07708,AT2G07708,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G51570,AT5G51570,,,,scRNA-seq,33955487,Differentially expressed gene,SPFH/Band 7/PHB domain-containing membrane-associated protein family
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G29820,AT1G29820,,,,scRNA-seq,33955487,Differentially expressed gene,Magnesium transporter CorA-like family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CHR4,AT5G44800,,,,scRNA-seq,33955487,Differentially expressed gene,chromatin remodeling 4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G07040,AT1G07040,,,,scRNA-seq,33955487,Differentially expressed gene,plant/protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ATSERAT3;1,AT2G17640,,,,scRNA-seq,33955487,Differentially expressed gene,Trimeric LpxA-like enzymes superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G25870,AT3G25870,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G13404,AT3G13404,,,,scRNA-seq,33955487,Differentially expressed gene,hypothetical protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G69580,AT1G69580,,,,scRNA-seq,33955487,Differentially expressed gene,Homeodomain-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PIP5K1,AT1G21980,,,,scRNA-seq,33955487,Differentially expressed gene,phosphatidylinositol-4-phosphate 5-kinase 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT4G24015,AT4G24015,,,,scRNA-seq,33955487,Differentially expressed gene,RING/U-box superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G42150,AT5G42150,,,,scRNA-seq,33955487,Differentially expressed gene,Glutathione S-transferase family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CID10,AT3G49390,,,,scRNA-seq,33955487,Differentially expressed gene,CTC-interacting domain 10
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,CLPB4,AT2G25140,,,,scRNA-seq,33955487,Differentially expressed gene,casein lytic proteinase B4
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G56760,AT3G56760,,,,scRNA-seq,33955487,Differentially expressed gene,Protein kinase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,BZIP24,AT3G51960,,,,scRNA-seq,33955487,Differentially expressed gene,basic leucine zipper 24
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,GTE2,AT5G10550,,,,scRNA-seq,33955487,Differentially expressed gene,global transcription factor group E2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,PLL5,AT1G07630,,,,scRNA-seq,33955487,Differentially expressed gene,pol-like 5
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G01400,AT3G01400,,,,scRNA-seq,33955487,Differentially expressed gene,ARM repeat superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT2G30000,AT2G30000,,,,scRNA-seq,33955487,Differentially expressed gene,PHF5-like protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G59450,AT5G59450,,,,scRNA-seq,33955487,Differentially expressed gene,GRAS family transcription factor
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,NIK2,AT3G25560,,,,scRNA-seq,33955487,Differentially expressed gene,NSP-interacting kinase 2
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G15970,AT1G15970,,,,scRNA-seq,33955487,Differentially expressed gene,DNA glycosylase superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G13940,AT1G13940,,,,scRNA-seq,33955487,Differentially expressed gene,"T-box transcription factor, putative (DUF863)"
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G06190,AT5G06190,,,,scRNA-seq,33955487,Differentially expressed gene,transmembrane protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT1G50630,AT1G50630,,,,scRNA-seq,33955487,Differentially expressed gene,extracellular ligand-gated ion channel protein (DUF3537)
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT3G09800,AT3G09800,,,,scRNA-seq,33955487,Differentially expressed gene,SNARE-like superfamily protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,SGP2,AT3G21700,,,,scRNA-seq,33955487,Differentially expressed gene,Ras-related small GTP-binding family protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,DCL1,AT1G01040,,,,scRNA-seq,33955487,Differentially expressed gene,dicer-like 1
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,AT5G18065,AT5G18065,,,,scRNA-seq,33955487,Differentially expressed gene,target of trans acting-siR480/255 protein
+Arabidopsis_thaliana,vascular system,PO0000034,companion cell,PO0000071,,ATG18B,AT4G30510,,,,scRNA-seq,33955487,Differentially expressed gene,autophagy 18 B-like protein
